@@ -1,7 +1,12 @@
-require "mongoid-minitest/version"
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+
+require 'mongoid'
+
+require 'matchers/have_field'
 
 module Mongoid
-  module Minitest
-    # Your code goes here...
+  module MiniTest
+    module Matchers
+    end
   end
 end

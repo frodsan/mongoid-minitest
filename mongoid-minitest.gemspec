@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "mongoid-minitest"
   gem.require_paths = ["lib"]
-  gem.version       = Mongoid::Minitest::VERSION
+  gem.version       = Mongoid::MiniTest::VERSION
 
   gem.add_dependency "minitest"
   gem.add_dependency "mongoid" , "~> 2.4.6"
