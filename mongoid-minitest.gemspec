@@ -4,9 +4,9 @@ require File.expand_path('../lib/mongoid-minitest/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Francesco Rodriguez"]
   gem.email         = ["lrodriguezsanc@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Minitest matchers for Mongoid}
+  gem.summary       = %q{Minitest matchers for Mongoid}
+  gem.homepage      = "https://github.com/frodsan/mongoid-minitest"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -14,4 +14,8 @@ Gem::Specification.new do |gem|
   gem.name          = "mongoid-minitest"
   gem.require_paths = ["lib"]
   gem.version       = Mongoid::Minitest::VERSION
+
+  gem.add_dependency "minitest"
+  gem.add_dependency "mongoid" , "~> 2.4.6"
+  gem.add_development_dependency "rake"
 end
