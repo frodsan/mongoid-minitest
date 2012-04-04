@@ -1,10 +1,9 @@
 require 'test_helper'
 
-class HaveFieldTest < UnitTest
+class HaveFieldTest < MiniTest::Unit::TestCase
 
-  def test_have_field_is_true
-    assert have_field(User, :name)
+  def test_assert_field_is_present
+    assert_have_field(User, :name)
   end
-
 
 end

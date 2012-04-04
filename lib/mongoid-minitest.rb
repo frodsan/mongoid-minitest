@@ -1,12 +1,6 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
-require 'mongoid'
+require "mongoid"
+require "minitest/spec"
 
-require 'matchers/have_field'
-
-module Mongoid
-  module MiniTest
-    module Matchers
-    end
-  end
-end
+require "minitest/assertions/have_field"

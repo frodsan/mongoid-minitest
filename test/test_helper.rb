@@ -15,7 +15,3 @@ end
 Dir[File.join(MODELS, "*.rb")].sort.each { |file| require File.basename(file) }
 
 require 'mongoid-minitest'
-
-class UnitTest < MiniTest::Unit::TestCase
-  include Mongoid::MiniTest::Matchers
-end
