@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Mongoid::MiniTest::VERSION
 
   gem.add_dependency "minitest"
+  gem.add_dependency "minitest-matchers"
   gem.add_dependency "mongoid" , "~> 2.4.6"
   gem.add_development_dependency "rake"
 end
