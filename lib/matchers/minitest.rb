@@ -12,7 +12,7 @@ module MiniTest
   end
 
   module Expectations
-    infect_an_assertion :assert_must, :must
-    infect_an_assertion :assert_wont, :wont
+    infect_an_assertion :assert_must, :must, :reverse
+    infect_an_assertion :assert_wont, :wont, :reverse
   end
 end
