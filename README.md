@@ -35,7 +35,7 @@ Example:
 
       def test_have_fields
         assert_must Dummy, have_field(:name)
-        assert_wont Dummy, have_field(:noname) 
+        assert_wont Dummy, have_field(:noexist) 
       end
     end
 
@@ -44,8 +44,17 @@ Example:
     describe Dummy do
       it "validates fields" do
         Dummy.must have_field(:name)
-        Dummy.wont have_field(:noname)
+        Dummy.wont have_field(:noexist)
       end
+    end
+
+## Using minitest/spec with subject
+
+    describe Dummy do
+      subject { Dummy }
+
+      it { must have_field(:name) }
+      it { wont have_field(:noexist) }
     end
 
 ## Contributing

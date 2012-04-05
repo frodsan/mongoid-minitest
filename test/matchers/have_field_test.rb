@@ -1,3 +1,4 @@
+# encoding: utf-8
 require "test_helper"
 
 describe "HaveFieldMatcher" do
@@ -33,6 +34,13 @@ describe "HaveFieldMatcher" do
         Dummy.wont have_field(:name)
       end
     end
+  end
+
+  describe "with subject" do
+    subject { Dummy }
+
+    it { must have_field(:name) }
+    it { wont have_field(:noexist) }
   end
 
   private
