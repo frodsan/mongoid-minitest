@@ -2,7 +2,7 @@
 
 MiniTest matchers for Mongoid.
 
-**First release:** 1 week! i hope :grin:
+**First release: 10/04/2012** - 1 week! :grin:
 
 ## Installation
 
