@@ -16,6 +16,3 @@ module MiniTest
     infect_an_assertion :assert_wont, :wont, :reverse
   end
 end
-
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-require "matchers/document"
