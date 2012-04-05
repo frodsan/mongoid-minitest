@@ -3,9 +3,10 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
 DUMMY = File.join(File.dirname(__FILE__), "dummy")
 $LOAD_PATH.unshift(DUMMY)
 
+gem "minitest"
 require "mongoid"
-require "minitest/autorun"
 require "minitest/spec"
+require "minitest/autorun"
 
 Mongoid.configure do |config|
   config.master = Mongo::Connection.new.db("mongoid-minitest-test")
