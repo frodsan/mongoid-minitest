@@ -1,5 +1,5 @@
 class Dummy
   include Mongoid::Document
 
-  field :name
+  field :name, type: String, default: "me"
 end

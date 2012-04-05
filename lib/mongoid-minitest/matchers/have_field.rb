@@ -6,13 +6,25 @@ module Mongoid
           @field = field.to_s
         end
 
+        def of_type(type)
+          @type = type
+          self
+        end
+
         def matches?(klass)
           @klass  = klass.is_a?(Class) ? klass : klass.class
           @errors = []
 
           if @klass.fields.include?(@field)
+            error = ""
+            
+            if @type && @klass.fields[@field].type != @type
+              error << " of type #{@klass.fields[@field].type}"
+            end
+
+            @errors << "field #{@field.inspect << error}" if !error.blank?
           else
-            @errors.push "no field named #{@field}"
+            @errors << "no field named #{@field}"
           end
 
           @errors.empty?
@@ -28,7 +40,8 @@ module Mongoid
         end
 
         def description
-          desc = "have field named #{@field}"
+          desc = "have field named #{@field.inspect}"
+          desc << " of type #{@type.inspect}" if @type
           desc
         end
       end

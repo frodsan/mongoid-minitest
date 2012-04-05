@@ -25,7 +25,7 @@ Example:
     class Dummy
       include Mongoid::Document
 
-      field :name
+      field :name, type: String
     end
 
 ### Using minitest/unit
@@ -35,7 +35,10 @@ Example:
 
       def test_have_fields
         assert_must Dummy, have_field(:name)
-        assert_wont Dummy, have_field(:noexist) 
+        assert_wont Dummy, have_field(:noexist)
+        
+        assert_must Dummy, have_field(:name).of_type(String)
+        assert_wont Dummy, have_field(:name).of_type(Integer)
       end
     end
 
@@ -45,6 +48,9 @@ Example:
       it "validates fields" do
         Dummy.must have_field(:name)
         Dummy.wont have_field(:noexist)
+
+        Dummy.must have_field(:name).of_type(String)
+        Dummy.wont have_field(:name).of_type(Integer)
       end
     end
 
@@ -55,6 +61,9 @@ Example:
 
       it { must have_field(:name) }
       it { wont have_field(:noexist) }
+
+      it { must have_field(:name).of_type(String) }
+      it { wont have_field(:name).of_type(Integer) }
     end
 
 ## Contributing
