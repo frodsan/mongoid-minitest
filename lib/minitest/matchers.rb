@@ -16,3 +16,13 @@ module MiniTest
     infect_an_assertion :assert_wont, :wont, :reverse
   end
 end
+
+class MiniTest::Spec
+  def must(*args, &block)
+    subject.must(*args, &block)
+  end
+
+  def wont(*args, &block)
+    subject.wont(*args, &block)
+  end
+end
