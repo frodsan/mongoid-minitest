@@ -20,7 +20,39 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Example:
+
+```ruby
+class Dummy
+  include Mongoid::Document
+
+  field :name
+end
+```
+
+### Using minitest/unit
+
+```ruby
+class DummyTest < MiniTest::Unit::TestCase
+  include Mongoid::MiniTest::Matchers
+
+  def test_have_fields
+    assert_must Dummy, have_field(:name)
+    assert_wont Dummy, have_field(:noname) 
+  end
+end
+```
+
+### Using minitest/spec
+
+```ruby
+describe Dummy do
+  it "validates fields" do
+    Dummy.must have_field(:name)
+    Dummy.wont have_field(:noname)
+  end
+end
+```
 
 ## Contributing
 
