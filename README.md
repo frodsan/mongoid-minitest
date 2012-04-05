@@ -48,7 +48,7 @@ Example:
       end
     end
 
-## Using minitest/spec with subject
+### Using minitest/spec with subject
 
     describe Dummy do
       subject { Dummy }
