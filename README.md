@@ -1,6 +1,8 @@
-# Mongoid::Minitest
+# mongoid-minitest
 
-TODO: Write a gem description
+MiniTest matchers for Mongoid.
+
+**First release:** 1 week! i hope :grin:
 
 ## Installation
 
