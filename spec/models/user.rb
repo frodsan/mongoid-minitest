@@ -1,4 +1,4 @@
-class Puppet
+class Dummy
   include Mongoid::Document
 
   field :name
