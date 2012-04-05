@@ -15,12 +15,6 @@ Dir[File.join(MODELS, "*.rb")].sort.each { |file| require File.basename(file) }
 
 require "mongoid-minitest"
 
-module MiniTest
-  module Assertions
-    def assert_failure
-      assert_raises(MiniTest::Assertion) do
-        yield
-      end
-    end
-  end
+class MiniTest::Spec
+  include Mongoid::MiniTest::Matchers
 end
