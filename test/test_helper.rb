@@ -1,7 +1,7 @@
 require "mongoid-minitest"
 require "minitest/autorun"
 
-Dir[File.dirname(__FILE__) + "/dummy/*.rb"].each { |f| require f }
+Dir[File.dirname(__FILE__) + "/models/*.rb"].each { |f| require f }
 
 Mongoid.configure do |config|
   config.master = Mongo::Connection.new.db("mongoid-minitest-test")
