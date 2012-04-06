@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe "HaveFieldMatcher" do
-  subject { Dummy }
+  subject { Person }
 
   it { must have_field(:name) }
   it { wont have_field(:noexist) }

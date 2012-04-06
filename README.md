@@ -32,14 +32,6 @@ or
       include Mongoid::MiniTest::Matchers
     end
 
-Example:
-
-    class Dummy
-      include Mongoid::Document
-
-      field :name, type: String, default: "me"
-    end
-
 ### Using minitest/unit
 
     class DummyTest < MiniTest::Unit::TestCase
