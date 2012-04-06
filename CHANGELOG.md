@@ -1,8 +1,8 @@
 ### 0.0.1
 
-* Adding `with_default_value` validation to `HaveFieldMatcher`.
-* Adding `of_type` validation to `HaveFieldMatcher`.
-* Adding `must` and `wont` to `MiniTest::Spec` to use them with subject.
-* Adding `have_field` matcher.
-* Adding `must` and `wont` expectations.
-* Adding `assert_must` and `assert_wont` to `MiniTest::Assertions`.
+* Added `with_default_value` method to `HaveFieldMatcher`.
+* Added `of_type` method to `HaveFieldMatcher`.
+* Added `must` and `wont` methods to `MiniTest::Spec`.
+* Added  `have_field` matcher.
+* Added `must` and `wont` expectations.
+* Added `assert_must` and `assert_wont` to `MiniTest::Assertions`.
