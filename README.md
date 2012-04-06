@@ -43,6 +43,10 @@ Example:
 ### Using minitest/unit
 
     class DummyTest < MiniTest::Unit::TestCase
+      def test_document_modules
+        assert_must Dummy, be_document
+      end
+
       def test_have_fields
         assert_must Dummy, have_field(:name)
         assert_wont Dummy, have_field(:noexist)
@@ -60,6 +64,10 @@ Example:
 ### Using minitest/spec
 
     describe Dummy do
+      it "validates document modules" do
+        Dummy.must be_document
+      end
+
       it "validates fields" do
         Dummy.must have_field(:name)
         Dummy.wont have_field(:noexist)
@@ -78,6 +86,8 @@ Example:
 
     describe Dummy do
       subject { Dummy }
+
+      it { must be_document }
 
       it { must have_field(:name) }
       it { wont have_field(:noexist) }

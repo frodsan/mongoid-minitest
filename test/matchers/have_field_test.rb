@@ -3,6 +3,8 @@ require "test_helper"
 describe "HaveFieldMatcher" do
   subject { Dummy }
 
+  it { must be_document }
+
   it { must have_field(:name) }
   it { wont have_field(:noexist) }
 
