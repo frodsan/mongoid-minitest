@@ -101,4 +101,4 @@ Example:
 
 ## Unit Tests
 
-To run unit tests, run `bundle exec rake`.
+To run unit tests, run `bundle exec rake` or `bundle exec guard` to run in auto mode.
