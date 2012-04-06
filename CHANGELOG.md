@@ -1,5 +1,6 @@
 ### 0.0.1
 
+* Added default failure messages based on description matcher.
 * Added `be_document` matcher.
 * Added `with_default_value` method to `HaveFieldMatcher`.
 * Added `of_type` method to `HaveFieldMatcher`.
