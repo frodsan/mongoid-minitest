@@ -11,15 +11,25 @@ module Mongoid
           self
         end
 
+        def with_default_value(default)
+          @default = default
+          self
+        end
+
         def matches?(klass)
           @klass  = klass.is_a?(Class) ? klass : klass.class
           @errors = []
 
           if @klass.fields.include?(@field)
             error = ""
+            field = @klass.fields[@field]
             
-            if @type && @klass.fields[@field].type != @type
-              error << " of type #{@klass.fields[@field].type}"
+            if @type && field.type != @type
+              error << " of type #{field.type}"
+            end
+
+            if !@default.nil? && !field.default.nil? && field.default != @default
+              error << " with default value of #{field.default}"
             end
 
             @errors << "field #{@field.inspect << error}" if !error.blank?
@@ -42,6 +52,7 @@ module Mongoid
         def description
           desc = "have field named #{@field.inspect}"
           desc << " of type #{@type.inspect}" if @type
+          desc << " with default value of #{@default.inspect}" if !@default.nil?
           desc
         end
       end

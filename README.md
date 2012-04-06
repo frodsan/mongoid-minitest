@@ -25,7 +25,7 @@ Example:
     class Dummy
       include Mongoid::Document
 
-      field :name, type: String
+      field :name, type: String, default: "me"
     end
 
 ### Using minitest/unit
@@ -39,6 +39,10 @@ Example:
         
         assert_must Dummy, have_field(:name).of_type(String)
         assert_wont Dummy, have_field(:name).of_type(Integer)
+
+        assert_must Dummy, have_field(:name).with_default_value("me")
+        assert_wont Dummy, have_field(:name).with_default_value("nodefault")
+        assert_must Dummy, have_field(:name).of_type(String).with_default_value("me")
       end
     end
 
@@ -51,6 +55,10 @@ Example:
 
         Dummy.must have_field(:name).of_type(String)
         Dummy.wont have_field(:name).of_type(Integer)
+
+        Dummy.must have_field(:name).with_default_value("me")
+        Dummy.wont have_field(:name).with_default_value("nodefault")
+        Dummy.must have_field(:name).of_type(String).with_default_value("me")
       end
     end
 
@@ -64,6 +72,10 @@ Example:
 
       it { must have_field(:name).of_type(String) }
       it { wont have_field(:name).of_type(Integer) }
+
+      it { must have_field(:name).with_default_value("me") }
+      it { wont have_field(:name).with_default_value("nodefault") }
+      it { must have_field(:name).of_type(String).with_default_value("me") }
     end
 
 ## Contributing
