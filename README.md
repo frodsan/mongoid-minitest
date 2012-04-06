@@ -20,6 +20,18 @@ Or install it yourself as:
 
 ## Usage
 
+Include `Mongoid::MiniTest::Matchers` into:
+
+    class MiniTest::Unit::TestCase
+      include Mongoid::MiniTest::Matchers
+    end
+
+or
+
+    class MiniTest::Spec
+      include Mongoid::MiniTest::Matchers
+    end
+
 Example:
 
     class Dummy
@@ -31,8 +43,6 @@ Example:
 ### Using minitest/unit
 
     class DummyTest < MiniTest::Unit::TestCase
-      include Mongoid::MiniTest::Matchers
-
       def test_have_fields
         assert_must Dummy, have_field(:name)
         assert_wont Dummy, have_field(:noexist)
