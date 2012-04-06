@@ -36,7 +36,8 @@ or
 
     class DummyTest < MiniTest::Unit::TestCase
       def test_document_modules
-        assert_must Dummy, be_document
+        assert_must Dummy, be_document # if model includes Mongoid::Document
+        assert_must Dummy, be_paranoid # if model includes Mongoid::Paranoia
       end
 
       def test_have_fields
@@ -57,7 +58,8 @@ or
 
     describe Dummy do
       it "validates document modules" do
-        Dummy.must be_document
+        Dummy.must be_document # if model includes Mongoid::Document
+        Dummy.must be_paranoid # if model includes Mongoid::Paranoia
       end
 
       it "validates fields" do
@@ -79,7 +81,8 @@ or
     describe Dummy do
       subject { Dummy }
 
-      it { must be_document }
+      it { must be_document } # if model includes Mongoid::Document
+      it { must be_paranoid } # if model includes Mongoid::Paranoia
 
       it { must have_field(:name) }
       it { wont have_field(:noexist) }
