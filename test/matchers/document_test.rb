@@ -6,4 +6,5 @@ describe "Document matchers" do
   it { must be_document }
   it { must be_paranoid }
   it { must be_versioned }
+  it { must be_timestamped }
 end

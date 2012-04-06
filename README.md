@@ -36,9 +36,10 @@ or
 
     class DummyTest < MiniTest::Unit::TestCase
       def test_document_modules
-        assert_must Dummy, be_document  # if model includes Mongoid::Document
-        assert_must Dummy, be_paranoid  # if model includes Mongoid::Paranoia
-        assert_must Dummy, be_versioned # if model includes Mongoid::Versioning
+        assert_must Dummy, be_document    # if model includes Mongoid::Document
+        assert_must Dummy, be_paranoid    # if model includes Mongoid::Paranoia
+        assert_must Dummy, be_versioned   # if model includes Mongoid::Versioning
+        assert_must Dummy, be_timestamped # if model includes Mongoid::Timestamps
       end
 
       def test_have_fields
@@ -59,9 +60,10 @@ or
 
     describe Dummy do
       it "validates document modules" do
-        Dummy.must be_document  # if model includes Mongoid::Document
-        Dummy.must be_paranoid  # if model includes Mongoid::Paranoia
-        Dummy.must be_versioned # if model includes Mongoid::Versioning
+        Dummy.must be_document    # if model includes Mongoid::Document
+        Dummy.must be_paranoid    # if model includes Mongoid::Paranoia
+        Dummy.must be_versioned   # if model includes Mongoid::Versioning
+        Dummy.must be_timestamped # if model includes Mongoid::Timestamps
       end
 
       it "validates fields" do
@@ -83,9 +85,10 @@ or
     describe Dummy do
       subject { Dummy }
 
-      it { must be_document }  # if model includes Mongoid::Document
-      it { must be_paranoid }  # if model includes Mongoid::Paranoia
-      it { must be_versioned } # if model includes Mongoid::Versioning
+      it { must be_document }    # if model includes Mongoid::Document
+      it { must be_paranoid }    # if model includes Mongoid::Paranoia
+      it { must be_versioned }   # if model includes Mongoid::Versioning
+      it { must be_timestamped } # if model includes Mongoid::Timestamps
 
       it { must have_field(:name) }
       it { wont have_field(:noexist) }
