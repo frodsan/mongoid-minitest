@@ -53,6 +53,7 @@ Example:
         assert_must Dummy, have_field(:name).with_default_value("me")
         assert_wont Dummy, have_field(:name).with_default_value("nodefault")
         assert_must Dummy, have_field(:name).of_type(String).with_default_value("me")
+        assert_wont Dummy, have_field(:name).of_type(String).with_default_value("nodefault")
       end
     end
 
@@ -69,6 +70,7 @@ Example:
         Dummy.must have_field(:name).with_default_value("me")
         Dummy.wont have_field(:name).with_default_value("nodefault")
         Dummy.must have_field(:name).of_type(String).with_default_value("me")
+        Dummy.wont have_field(:name).of_type(String).with_default_value("nodefault")
       end
     end
 
@@ -86,6 +88,7 @@ Example:
       it { must have_field(:name).with_default_value("me") }
       it { wont have_field(:name).with_default_value("nodefault") }
       it { must have_field(:name).of_type(String).with_default_value("me") }
+      it { wont have_field(:name).of_type(String).with_default_value("nodefault") }
     end
 
 ## Contributing

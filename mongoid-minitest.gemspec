@@ -17,6 +17,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "minitest", "~> 2.12.0"
   gem.add_dependency "mongoid" , "~> 2.4.6"
-  gem.add_development_dependency "rake"
   gem.add_development_dependency "bson_ext", "~> 1.6.1"
+  gem.add_development_dependency "guard-minitest"
+  gem.add_development_dependency "rake"
 end
