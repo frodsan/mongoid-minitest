@@ -1,5 +1,6 @@
 ### 0.0.1
 
+* Added `be_versioned` document matcher.
 * Added `be_paranoid` document matcher.
 * Added default failure messages based on description matcher.
 * Added `be_document` document matcher.
