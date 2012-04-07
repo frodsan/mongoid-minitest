@@ -13,4 +13,11 @@ describe "HaveFieldMatcher" do
   it { wont have_field(:name).with_default_value("nodefault") }
   it { must have_field(:name).of_type(String).with_default_value("me") }
   it { wont have_field(:name).of_type(String).with_default_value("nodefault") }
+
+  it { must have_fields(:name, :nick) }
+  it { wont have_fields(:noexist, :noexistagain) }
+  it { must have_fields(:name, :nick).of_type(String) }
+  it { wont have_fields(:name, :nick).of_type(Integer) }
+  it { must have_fields(:name, :nick).with_default_value("me") }
+  it { must have_fields(:name, :nick).of_type(String).with_default_value("me") }
 end

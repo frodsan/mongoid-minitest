@@ -1,5 +1,6 @@
 ### 0.0.1
 
+* Added `have_fields` matcher.
 * Added `be_timestamped` document matcher.
 * Added `be_versioned` document matcher.
 * Added `be_paranoid` document matcher.

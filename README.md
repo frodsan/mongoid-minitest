@@ -32,54 +32,6 @@ or
       include Mongoid::MiniTest::Matchers
     end
 
-### Using minitest/unit
-
-    class DummyTest < MiniTest::Unit::TestCase
-      def test_document_modules
-        assert_must Dummy, be_document    # if model includes Mongoid::Document
-        assert_must Dummy, be_paranoid    # if model includes Mongoid::Paranoia
-        assert_must Dummy, be_versioned   # if model includes Mongoid::Versioning
-        assert_must Dummy, be_timestamped # if model includes Mongoid::Timestamps
-      end
-
-      def test_have_fields
-        assert_must Dummy, have_field(:name)
-        assert_wont Dummy, have_field(:noexist)
-        
-        assert_must Dummy, have_field(:name).of_type(String)
-        assert_wont Dummy, have_field(:name).of_type(Integer)
-
-        assert_must Dummy, have_field(:name).with_default_value("me")
-        assert_wont Dummy, have_field(:name).with_default_value("nodefault")
-        assert_must Dummy, have_field(:name).of_type(String).with_default_value("me")
-        assert_wont Dummy, have_field(:name).of_type(String).with_default_value("nodefault")
-      end
-    end
-
-### Using minitest/spec
-
-    describe Dummy do
-      it "validates document modules" do
-        Dummy.must be_document    # if model includes Mongoid::Document
-        Dummy.must be_paranoid    # if model includes Mongoid::Paranoia
-        Dummy.must be_versioned   # if model includes Mongoid::Versioning
-        Dummy.must be_timestamped # if model includes Mongoid::Timestamps
-      end
-
-      it "validates fields" do
-        Dummy.must have_field(:name)
-        Dummy.wont have_field(:noexist)
-
-        Dummy.must have_field(:name).of_type(String)
-        Dummy.wont have_field(:name).of_type(Integer)
-
-        Dummy.must have_field(:name).with_default_value("me")
-        Dummy.wont have_field(:name).with_default_value("nodefault")
-        Dummy.must have_field(:name).of_type(String).with_default_value("me")
-        Dummy.wont have_field(:name).of_type(String).with_default_value("nodefault")
-      end
-    end
-
 ### Using minitest/spec with subject
 
     describe Dummy do
@@ -100,6 +52,27 @@ or
       it { wont have_field(:name).with_default_value("nodefault") }
       it { must have_field(:name).of_type(String).with_default_value("me") }
       it { wont have_field(:name).of_type(String).with_default_value("nodefault") }
+
+      it { must have_fields(:name, :nick) }
+      it { wont have_fields(:noexist, :neverexist) }
+      it { must have_fields(:name, :nick).of_type(String) }
+      it { must have_fields(:name, :nick).with_default_value("me") }
+      it { must have_fields(:name, :nick).of_type(String).with_default_value("me") }
+    end
+
+If you don't like this approach, you could use `assert_must(klass, matcher)` for
+`MiniTest::Unit::TestCase` like:
+
+    def test_fields
+      assert_must Dummy, have_field(:name)
+      assert_wont Dummy, have_field(:noexist)
+    end
+
+or for `MiniTest::Spec` like:
+
+    it "should test fields" do
+      Dummy.must have_field(:name)
+      Dummy.wont have_field(:noexist)
     end
 
 ## Contributing

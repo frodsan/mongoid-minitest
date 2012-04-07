@@ -5,4 +5,5 @@ class Person
   include Mongoid::Timestamps
 
   field :name, type: String, default: "me"
+  field :nick, type: String, default: "me"
 end

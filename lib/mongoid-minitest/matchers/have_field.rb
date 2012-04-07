@@ -2,8 +2,8 @@ module Mongoid
   module MiniTest
     module Matchers
       class HaveFieldMatcher
-        def initialize(field)
-          @field = field.to_s
+        def initialize(*fields)
+          @fields = fields.collect(&:to_s)
         end
 
         def of_type(type)
@@ -20,21 +20,23 @@ module Mongoid
           @klass  = klass.is_a?(Class) ? klass : klass.class
           @errors = []
 
-          if @klass.fields.include?(@field)
-            error = ""
-            field = @klass.fields[@field]
-            
-            if @type && field.type != @type
-              error << " of type #{field.type}"
-            end
+          @fields.each do |field|
+            if @klass.fields.include?(field)
+              error = ""
+              field = @klass.fields[field]
+              
+              if @type && field.type != @type
+                error << " of type #{field.type}"
+              end
 
-            if !@default.nil? && !field.default.nil? && field.default != @default
-              error << " with default value of #{field.default}"
-            end
+              if !@default.nil? && !field.default.nil? && field.default != @default
+                error << " with default value of #{field.default}"
+              end
 
-            @errors << "field #{@field.inspect << error}" if !error.blank?
-          else
-            @errors << "no field named #{@field}"
+              @errors << "field #{field.inspect << error}" if !error.blank?
+            else
+              @errors << "no field named #{field}"
+            end
           end
 
           @errors.empty?
@@ -50,16 +52,17 @@ module Mongoid
         end
 
         def description
-          desc = "have field named #{@field.inspect}"
+          desc = "have #{@fields.size > 1 ? 'fields' : 'field'} named #{@fields.collect(&:inspect).to_sentence}"
           desc << " of type #{@type.inspect}" if @type
           desc << " with default value of #{@default.inspect}" if !@default.nil?
           desc
         end
       end
 
-      def have_field(field)
-        HaveFieldMatcher.new(field)
+      def have_field(*fields)
+        HaveFieldMatcher.new(*fields)
       end
+      alias :have_fields :have_field
     end
   end
 end
