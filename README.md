@@ -61,6 +61,11 @@ See the following examples:
 
 ## Matchers
 
+`Mongoid::Matchers` include the following modules:
+
+    Mongoid::Matchers::Document
+    Mongoid::Matchers::Validations
+
 ### Document Matchers
 
     describe Mongoid::Matchers::Document do
