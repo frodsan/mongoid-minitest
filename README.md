@@ -32,9 +32,26 @@ or
       include Mongoid::MiniTest::Matchers
     end
 
-### Using minitest/spec with subject
+### Using with minitest/unit or minitest/spec without subject
 
-#### Document Matchers
+If you don't like this approach, you can use `assert_must(klass, matcher)` for
+`MiniTest::Unit::TestCase` like:
+
+    def test_fields
+      assert_must Dummy, have_field(:name)
+      assert_wont Dummy, have_field(:noexist)
+    end
+
+or, for `MiniTest::Spec`, like:
+
+    it "should test fields" do
+      Dummy.must have_field(:name)
+      Dummy.wont have_field(:noexist)
+    end
+
+## Examples
+
+### Document Matchers
 
     describe Mongoid::Matchers::Document do
       subject { Person }
@@ -70,23 +87,6 @@ or
 
       it { must validate_presence_of(:name) }
       it { wont validate_presence_of(:age) }
-    end
-
-### Using with minitest/unit or minitest/spec without subject
-
-If you don't like this approach, you can use `assert_must(klass, matcher)` for
-`MiniTest::Unit::TestCase` like:
-
-    def test_fields
-      assert_must Dummy, have_field(:name)
-      assert_wont Dummy, have_field(:noexist)
-    end
-
-or, for `MiniTest::Spec`, like:
-
-    it "should test fields" do
-      Dummy.must have_field(:name)
-      Dummy.wont have_field(:noexist)
     end
 
 ## Contributing
