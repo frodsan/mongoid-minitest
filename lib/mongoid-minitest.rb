@@ -1,9 +1,17 @@
+$LOAD_PATH.unshift(File.dirname(__FILE__) + "/mongoid-minitest/matchers")
+
 gem "minitest"
 require "mongoid"
 require "minitest/spec"
 
 require "minitest/matchers"
-Dir[File.dirname(__FILE__) + "/mongoid-minitest/matchers/**/*.rb"].each { |f| require f }
+require "document/have_field"
+require "document/be_document"
+require "document/be_paranoid"
+require "document/be_versioned"
+require "document/be_timestamped"
+require "validations/validations"
+require "validations/presence_of"
 
 module Mongoid
   module Matchers
