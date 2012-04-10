@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/mongoid-minitest/version', __FILE__)
+require File.expand_path("../lib/mongoid-minitest/version", __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Francesco Rodriguez"]
@@ -19,5 +19,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency "mongoid" , "~> 2.4.6"
   gem.add_development_dependency "bson_ext", "~> 1.6.1"
   gem.add_development_dependency "guard-minitest"
-  gem.add_development_dependency "rake"
+  gem.add_development_dependency "rake", "~> 0.9.2"
 end
