@@ -20,34 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-Include `Mongoid::MiniTest::Matchers`:
+First, you have to include `Mongoid::Matchers` module
+into:
 
     class MiniTest::Unit::TestCase
-      include Mongoid::MiniTest::Matchers
+      include Mongoid::Matchers
     end
 
-or
+if you're using `minitest/unit` or:
 
     class MiniTest::Spec
-      include Mongoid::MiniTest::Matchers
+      include Mongoid::Matchers
     end
 
-### Using with minitest/unit or minitest/spec without subject
-
-If you don't like this approach, you can use `assert_must(klass, matcher)` for
-`MiniTest::Unit::TestCase` like:
-
-    def test_fields
-      assert_must Dummy, have_field(:name)
-      assert_wont Dummy, have_field(:noexist)
-    end
-
-or, for `MiniTest::Spec`, like:
-
-    it "should test fields" do
-      Dummy.must have_field(:name)
-      Dummy.wont have_field(:noexist)
-    end
+if you're using `minitest/spec`
 
 ## Examples
 
