@@ -8,5 +8,6 @@ Dir[File.dirname(__FILE__) + "/mongoid-minitest/matchers/**/*.rb"].each { |f| re
 module Mongoid
   module Matchers
     include Mongoid::Matchers::Document
+    include Mongoid::Matchers::Validations
   end
 end

@@ -1,5 +1,6 @@
 ### 0.0.1
 
+* Added `validate_presence_of(field)` matcher.
 * Added `have_fields` matcher.
 * Added `be_timestamped` document matcher.
 * Added `be_versioned` document matcher.

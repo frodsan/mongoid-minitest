@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "HaveFieldMatcher" do
+describe Mongoid::Matchers::Document do
   subject { Person }
 
   it { must be_document }

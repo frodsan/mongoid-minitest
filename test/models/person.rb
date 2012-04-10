@@ -6,4 +6,6 @@ class Person
 
   field :name, type: String, default: "me"
   field :nick, type: String, default: "me"
+
+  validates_presence_of(:name)
 end
