@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Include `Mongoid::MiniTest::Matchers` into:
+Include `Mongoid::MiniTest::Matchers`:
 
     class MiniTest::Unit::TestCase
       include Mongoid::MiniTest::Matchers
@@ -60,7 +60,7 @@ or
       it { must have_fields(:name, :nick).of_type(String).with_default_value("me") }
     end
 
-If you don't like this approach, you could use `assert_must(klass, matcher)` for
+If you don't like this approach, you can use `assert_must(klass, matcher)` for
 `MiniTest::Unit::TestCase` like:
 
     def test_fields
@@ -68,7 +68,7 @@ If you don't like this approach, you could use `assert_must(klass, matcher)` for
       assert_wont Dummy, have_field(:noexist)
     end
 
-or for `MiniTest::Spec` like:
+or, for `MiniTest::Spec`, like:
 
     it "should test fields" do
       Dummy.must have_field(:name)
