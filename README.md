@@ -20,20 +20,46 @@ Or install it yourself as:
 
 ## Usage
 
-If you use `minitest/unit`, include `Mongoid::Matchers`
-like this:
+Matchers are available at `Mongoid::Matchers` module.
+Setup matchers according to your testing preferences:
+
+### minitest/unit
 
     class MiniTest::Unit::TestCase
       include Mongoid::Matchers
     end
 
-If you use `minitest/spec`, do this:
+### minitest/spec
 
     class MiniTest::Spec
       include Mongoid::Matchers
     end
 
-## Examples
+See the following examples:
+
+    # minitest/unit
+    class DummyTest < MiniTest::Unit::TestCase
+      def test_matchers
+        assert_must Dummy, have_field(:name)
+        assert_wont Dummy, have_field(:none)
+      end
+    end
+
+    # minitest/spec
+    describe Dummy
+      it "sould test matchers" do
+        Dummy.must have_field(:name)
+        Dummy.wont have_field(:none)
+      end
+    end
+
+    # minitest/spec with subject
+    describe Dummy
+      it { must have_field(:name) }
+      it { wont have_field(:none) }
+    end
+
+## Matchers
 
 ### Document Matchers
 
