@@ -1,6 +1,6 @@
 module Mongoid
-  module MiniTest
-    module Matchers
+  module Matchers
+    module Document
       class BeParanoidMatcher
         def matches?(klass)
           @klass = klass

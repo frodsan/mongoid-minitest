@@ -1,6 +1,6 @@
 module Mongoid
-  module MiniTest
-    module Matchers
+  module Matchers
+    module Document
       class BeVersionedMatcher
         def matches?(klass)
           @klass = klass

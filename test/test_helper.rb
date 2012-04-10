@@ -8,5 +8,5 @@ Mongoid.configure do |config|
 end
 
 class MiniTest::Spec
-  include Mongoid::MiniTest::Matchers
+  include Mongoid::Matchers
 end

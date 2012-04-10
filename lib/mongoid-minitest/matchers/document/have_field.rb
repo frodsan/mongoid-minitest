@@ -1,6 +1,6 @@
 module Mongoid
-  module MiniTest
-    module Matchers
+  module Matchers
+    module Document
       class HaveFieldMatcher
         def initialize(*fields)
           @fields = fields.collect(&:to_s)
@@ -52,7 +52,8 @@ module Mongoid
         end
 
         def description
-          desc = "have #{@fields.size > 1 ? 'fields' : 'field'} named #{@fields.collect(&:inspect).to_sentence}"
+          desc =  "have #{@fields.size > 1 ? 'fields' : 'field'} named"
+          desc << " #{@fields.collect(&:inspect).to_sentence}"
           desc << " of type #{@type.inspect}" if @type
           desc << " with default value of #{@default.inspect}" if !@default.nil?
           desc
@@ -63,6 +64,7 @@ module Mongoid
         HaveFieldMatcher.new(*fields)
       end
       alias :have_fields :have_field
+
     end
   end
 end
