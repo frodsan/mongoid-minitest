@@ -87,14 +87,6 @@ or, for `MiniTest::Spec`, like:
 
 To run unit tests, run `bundle exec rake` or `bundle exec guard` to run in auto mode.
 
-## Last words
-
-At my job, We're migrating all the tests from `rspec` to `minitest`. I've been using
-[mongoid-rspec gem](https://github.com/evansagge/mongoid-rspec) by [evanssage](https://github.com/evansagge).
-So, this gem is heavily inspired in Evan's gem and [minitest-matchers](https://github.com/zenspider/minitest-matchers)
-by [zenspider](https://github.com/zenspider). We love [minitest](https://github.com/seattlerb/minitest) and
-we hope that this will be helpful for you. Thanks!
-
 ## License
 
 Copyright (c) 2012 Francesco Rodriguez
@@ -119,3 +111,12 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Last words
+
+At my job, We're migrating all the tests from `rspec` to `minitest`. I've been using
+[mongoid-rspec gem](https://github.com/evansagge/mongoid-rspec) by [evanssage](https://github.com/evansagge).
+So, this gem is heavily inspired in Evan's gem and [minitest-matchers](https://github.com/zenspider/minitest-matchers)
+by [zenspider](https://github.com/zenspider). We love [minitest](https://github.com/seattlerb/minitest) and
+we hope that this will be helpful for you. Thanks!
+
