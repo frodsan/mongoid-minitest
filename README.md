@@ -102,6 +102,12 @@ See the following examples:
 
       it { must validate_presence_of(:name) }
       it { wont validate_presence_of(:age) }
+
+      it { must validate_uniqueness_of(:nick) }
+      it { wont validate_uniqueness_of(:name) }
+
+      it { must validate_uniqueness_of(:nick).case_insensitive }
+      it { wont validate_uniqueness_of(:code).case_insensitive }
     end
 
 ## Contributing

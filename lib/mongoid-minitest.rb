@@ -12,6 +12,7 @@ require "document/be_versioned"
 require "document/be_timestamped"
 require "validations/validations"
 require "validations/presence_of"
+require "validations/uniqueness_of"
 
 module Mongoid
   module Matchers
