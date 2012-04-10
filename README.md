@@ -63,8 +63,12 @@ See the following examples:
 
 `Mongoid::Matchers` include the following modules:
 
-    Mongoid::Matchers::Document
-    Mongoid::Matchers::Validations
+    Module Mongoid
+      Module Matchers
+        include Mongoid::Matchers::Document
+        include Mongoid::Matchers::Validations
+      end
+    end
 
 ### Document Matchers
 
