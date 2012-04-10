@@ -20,20 +20,18 @@ Or install it yourself as:
 
 ## Usage
 
-First, you have to include `Mongoid::Matchers` module
-into:
+If you use `minitest/unit`, include `Mongoid::Matchers`
+like this:
 
     class MiniTest::Unit::TestCase
       include Mongoid::Matchers
     end
 
-if you're using `minitest/unit` or:
+If you use `minitest/spec`, do this:
 
     class MiniTest::Spec
       include Mongoid::Matchers
     end
-
-if you're using `minitest/spec`
 
 ## Examples
 
