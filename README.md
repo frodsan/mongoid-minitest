@@ -165,7 +165,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 At [EpicLabs](https://github.com/epiclabs/), We're migrating all the tests from `rspec` to `minitest`. I've been using
 [mongoid-rspec gem](https://github.com/evansagge/mongoid-rspec) by [evanssage](https://github.com/evansagge).
-So, this gem is heavily inspired in Evan's gem and [minitest-matchers](https://github.com/zenspider/minitest-matchers)
+So, this gem is heavily inspired in Evan's gem and [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem
 by [zenspider](https://github.com/zenspider). We love [minitest](https://github.com/seattlerb/minitest) and
 we hope that this will be helpful for you. Thanks!
 
