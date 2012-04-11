@@ -2,6 +2,8 @@ module Mongoid
   module Matchers
     module Document
       class HaveFieldMatcher
+        include Mongoid::Matchers::Helpers
+
         def initialize(*fields)
           @fields = fields.collect(&:to_s)
         end
@@ -26,16 +28,16 @@ module Mongoid
               result_field = @klass.fields[field]
               
               if @type && result_field.type != @type
-                error << " of type #{result_field.type}"
+                error << " of type #{result_field.type.inspect}"
               end
 
               if !@default.nil? && !result_field.default.nil? && result_field.default != @default
-                error << " with default value of #{result_field.default}"
+                error << " with default value of #{result_field.default.inspect}"
               end
 
               @errors << "field #{field.inspect << error}" if !error.blank?
             else
-              @errors << "no field named #{field}"
+              @errors << "no field named #{field.inspect}"
             end
           end
 
@@ -53,7 +55,7 @@ module Mongoid
 
         def description
           desc =  "have #{@fields.size > 1 ? 'fields' : 'field'} named"
-          desc << " #{@fields.collect(&:inspect).to_sentence}"
+          desc << " #{to_sentence(@fields)}"
           desc << " of type #{@type.inspect}" if @type
           desc << " with default value of #{@default.inspect}" if !@default.nil?
           desc

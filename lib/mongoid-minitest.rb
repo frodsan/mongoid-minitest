@@ -5,6 +5,7 @@ require "mongoid"
 require "minitest/spec"
 
 require "minitest/matchers"
+require "helpers"
 require "document/have_field"
 require "document/be_document"
 require "document/be_paranoid"
