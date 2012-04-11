@@ -21,7 +21,7 @@ describe Mongoid::Matchers::Document do
 
   it { must have_fields(:name, :login) }
   it { wont have_fields(:noexist, :noexistagain) }
-  it { must have_fields(:name, :login).of_type(Integer) }
+  it { must have_fields(:name, :login).of_type(String) }
   it { wont have_fields(:name, :login).of_type(Integer) }
   it { must have_fields(:name, :login).with_default_value("me") }
   it { must have_fields(:name, :login).of_type(String).with_default_value("me") }

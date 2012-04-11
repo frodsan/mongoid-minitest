@@ -1,22 +1,20 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__) + "/mongoid-minitest/matchers")
-
 gem "minitest"
 require "mongoid"
 require "minitest/spec"
 
 require "minitest/matchers"
-require "helpers"
-require "document/have_field"
-require "document/be_document"
-require "document/be_paranoid"
-require "document/be_versioned"
-require "document/be_timestamped"
-require "validations/validations"
-require "validations/presence_of"
-require "validations/uniqueness_of"
-require "validations/length_of"
-require "validations/format_of"
-require "validations/exclusion_of"
+require "matchers/helpers"
+require "matchers/document/have_field"
+require "matchers/document/be_document"
+require "matchers/document/be_paranoid"
+require "matchers/document/be_versioned"
+require "matchers/document/be_timestamped"
+require "matchers/validations/validations"
+require "matchers/validations/presence_of"
+require "matchers/validations/uniqueness_of"
+require "matchers/validations/length_of"
+require "matchers/validations/format_of"
+require "matchers/validations/exclusion_of"
 
 module Mongoid
   module Matchers
