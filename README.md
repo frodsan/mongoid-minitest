@@ -1,6 +1,8 @@
 # mongoid-minitest
 
-MiniTest matchers for Mongoid. Requires Ruby 1.9.
+MiniTest matchers for Mongoid.  
+
+Requires Ruby 1.9.
 
 **First release: 10/04/2012** - 1 week! :grin:
 
@@ -155,4 +157,3 @@ At [EpicLabs](https://github.com/epiclabs/), We're migrating all the tests from 
 So, this gem is heavily inspired in Evan's gem and [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem
 by [zenspider](https://github.com/zenspider). We love [minitest](https://github.com/seattlerb/minitest) and
 we hope that this will be helpful for you. Thanks!
-
