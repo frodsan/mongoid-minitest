@@ -10,6 +10,7 @@ module Mongoid
           @minimum = value
           self
         end
+        alias :with_min :with_minimum
 
         def matches?(klass)
           return false unless @result = super(klass)

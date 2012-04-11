@@ -1,8 +1,9 @@
 ### 0.0.1
 
-+ Added `with_minimum` matching chain to `validate_presence_of` matcher.
-+ Added `validate_presence_of matcher.
-+ Added `case_sensitive` matching chain to `validate_uniqueness_of` matcher.
++ Added `with_min` alias to `with_minimum` matcher.
++ Added `with_minimum` matcher to `ValidateLengthMatcher`.
++ Added `validate_length_of` matcher.
++ Added `case_sensitive` matcher to `ValidateUniquenessMatcher`.
 + Added `validate_uniqueness_of` matcher.
 + Added `validate_presence_of` matcher.
 + Added `have_fields` matcher.
@@ -11,8 +12,8 @@
 + Added `be_paranoid` document matcher.
 + Added default failure messages based on description matcher.
 + Added `be_document` document matcher.
-+ Added `with_default_value` matching chain to `have_field` matcher.
-+ Added `of_type` matching chain to `have_field` matcher.
++ Added `with_default_value` matcher to `HaveFieldMatcher`.
++ Added `of_type` matcher to `HaveFieldMatcher`.
 + Added `must` and `wont` methods to `MiniTest::Spec`.
 + Added `have_field` matcher.
 + Added `must` and `wont` expectations.
