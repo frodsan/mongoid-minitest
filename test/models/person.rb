@@ -14,5 +14,5 @@ class Person
   validates_uniqueness_of(:email)
   validates_uniqueness_of(:login, case_sensitive: false)
   validates_length_of(:password, minimum: 8, maximum: 16)
-  validates_format_of(:email, with: //)
+  validates_format_of(:email, with: /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i)
 end

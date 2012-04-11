@@ -105,7 +105,7 @@ See the following examples:
       it { must validate_length_of(:password).with_max(16) }
       it { must validate_length_of(:password).with_maximum(16) }
 
-      it { must validate_format_of(:email) }
+      it { must validate_format_of(:email).to_allow("a@example.com") }
     end
 
 ## Contributing

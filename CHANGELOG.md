@@ -1,5 +1,6 @@
 ### 0.0.1
 
++ Added `to_allow` matcher to `ValidateFormatMatcher`.
 + Added `validate_format_of` matcher.
 + Added `with_max` alias to `with_maximum` matcher.
 + Added `with_maximum` matcher to `ValidateLengthMatcher`

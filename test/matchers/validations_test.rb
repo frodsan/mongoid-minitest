@@ -18,6 +18,6 @@ describe Mongoid::Matchers::Validations do
   it { must validate_length_of(:password).with_maximum(16) }
   it { wont validate_length_of(:password).with_maximum(8) }
 
-  it { must validate_format_of(:email) }
-  it { wont validate_format_of(:password) }
+  it { must validate_format_of(:email).to_allow("a@example.com") }
+  it { wont validate_format_of(:email).to_allow("a_example_com") }
 end
