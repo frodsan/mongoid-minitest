@@ -16,6 +16,7 @@ module Mongoid
           @maximum = value
           self
         end
+        alias :with_max :with_maximum
 
         def matches?(klass)
           return false unless @result = super(klass)
