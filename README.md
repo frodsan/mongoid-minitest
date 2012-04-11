@@ -91,12 +91,12 @@ See the following examples:
       it { must have_field(:name).of_type(String).with_default_value("me") }
       it { wont have_field(:name).of_type(String).with_default_value("nodefault") }
 
-      it { must have_fields(:name, :nick) }
+      it { must have_fields(:name, :login) }
       it { wont have_fields(:noexist, :noexistagain) }
-      it { must have_fields(:name, :nick).of_type(String) }
-      it { wont have_fields(:name, :nick).of_type(Integer) }
-      it { must have_fields(:name, :nick).with_default_value("me") }
-      it { must have_fields(:name, :nick).of_type(String).with_default_value("me") }
+      it { must have_fields(:name, :login).of_type(String) }
+      it { wont have_fields(:name, :login).of_type(Integer) }
+      it { must have_fields(:name, :login).with_default_value("me") }
+      it { must have_fields(:name, :login).of_type(String).with_default_value("me") }
     end
 
 ### Validations Matchers
@@ -107,17 +107,17 @@ See the following examples:
       it { must validate_presence_of(:name) }
       it { wont validate_presence_of(:age) }
 
-      it { must validate_uniqueness_of(:nick) }
+      it { must validate_uniqueness_of(:login) }
       it { wont validate_uniqueness_of(:name) }
-      it { must validate_uniqueness_of(:nick).case_insensitive }
-      it { wont validate_uniqueness_of(:code).case_insensitive }
+      it { must validate_uniqueness_of(:login).case_insensitive }
+      it { wont validate_uniqueness_of(:code).case_insensitive }
 
       it { must validate_length_of(:password) }
       it { wont validate_length_of(:code) }
       it { must validate_length_of(:password).with_min(8) }
-      it { wont validate_length_of(:password).with_min(0) }
+      it { wont validate_length_of(:password).with_min(0) }
       it { must validate_length_of(:password).with_minimum(8) }
-      it { wont validate_length_of(:password).with_minimum(0) }
+      it { wont validate_length_of(:password).with_minimum(0) }
       it { must validate_length_of(:password).with_max(16) }
       it { wont validate_length_of(:password).with_max(8) }
       it { must validate_length_of(:password).with_maximum(16) }

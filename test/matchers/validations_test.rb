@@ -6,9 +6,9 @@ describe Mongoid::Matchers::Validations do
   it { must validate_presence_of(:name) }
   it { wont validate_presence_of(:age) }
 
-  it { must validate_uniqueness_of(:nick) }
+  it { must validate_uniqueness_of(:login) }
   it { wont validate_uniqueness_of(:name) }
-  it { must validate_uniqueness_of(:nick).case_insensitive }
+  it { must validate_uniqueness_of(:login).case_insensitive }
   it { wont validate_uniqueness_of(:code).case_insensitive }
 
   it { must validate_length_of(:password) }

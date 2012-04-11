@@ -23,14 +23,14 @@ module Mongoid
           @fields.each do |field|
             if @klass.fields.include?(field)
               error = ""
-              field = @klass.fields[field]
+              result_field = @klass.fields[field]
               
-              if @type && field.type != @type
-                error << " of type #{field.type}"
+              if @type && result_field.type != @type
+                error << " of type #{result_field.type}"
               end
 
-              if !@default.nil? && !field.default.nil? && field.default != @default
-                error << " with default value of #{field.default}"
+              if !@default.nil? && !result_field.default.nil? && result_field.default != @default
+                error << " with default value of #{result_field.default}"
               end
 
               @errors << "field #{field.inspect << error}" if !error.blank?
