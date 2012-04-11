@@ -118,6 +118,9 @@ See the following examples:
       it { wont validate_length_of(:password).with_max(8) }
       it { must validate_length_of(:password).with_maximum(16) }
       it { wont validate_length_of(:password).with_maximum(8) }
+
+      it { must validate_format_of(:email) }
+      it { wont validate_format_of(:password) }
     end
 
 ## Contributing

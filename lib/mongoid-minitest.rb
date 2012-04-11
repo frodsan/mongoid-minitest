@@ -14,6 +14,7 @@ require "validations/validations"
 require "validations/presence_of"
 require "validations/uniqueness_of"
 require "validations/length_of"
+require "validations/format_of"
 
 module Mongoid
   module Matchers
