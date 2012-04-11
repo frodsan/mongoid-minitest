@@ -22,4 +22,6 @@ describe Mongoid::Matchers::Validations do
   it { wont validate_format_of(:email).to_allow("foo_bar_com") }
   it { must validate_format_of(:email).to_not_allow("foo_bar_com") }
   it { wont validate_format_of(:email).to_not_allow("foo@bar.com") }
+
+  it { must validate_exclusion_of(:email) }
 end
