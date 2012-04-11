@@ -13,6 +13,7 @@ require "document/be_timestamped"
 require "validations/validations"
 require "validations/presence_of"
 require "validations/uniqueness_of"
+require "validations/length_of"
 
 module Mongoid
   module Matchers

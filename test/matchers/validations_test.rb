@@ -8,7 +8,9 @@ describe Mongoid::Matchers::Validations do
 
   it { must validate_uniqueness_of(:nick) }
   it { wont validate_uniqueness_of(:name) }
-
   it { must validate_uniqueness_of(:nick).case_insensitive }
   it { wont validate_uniqueness_of(:code).case_insensitive }
+
+  it { must validate_length_of(:password) }
+  it { wont validate_length_of(:code) }
 end

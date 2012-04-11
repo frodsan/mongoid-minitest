@@ -1,8 +1,9 @@
 ### 0.0.1
 
++ Added `validate_presence_of matcher.
 + Added `case_sensitive` matching chain to `validate_uniqueness_of` matcher.
-+ Added `validate_uniqueness_of(field)` matcher.
-+ Added `validate_presence_of(field)` matcher.
++ Added `validate_uniqueness_of` matcher.
++ Added `validate_presence_of` matcher.
 + Added `have_fields` matcher.
 + Added `be_timestamped` document matcher.
 + Added `be_versioned` document matcher.
