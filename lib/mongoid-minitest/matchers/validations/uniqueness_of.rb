@@ -21,9 +21,9 @@ module Mongoid
 
         def check_case_sensivity
           if @validator.options[:case_sensitive] == false
-            @positive_result_message << " with case insensitive values"
+            @positive_message << " with case insensitive values"
           else
-            @negative_result_message << " without case insensitive values"
+            @negative_message << " without case insensitive values"
             @result = false
           end
         end

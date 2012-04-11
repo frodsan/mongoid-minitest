@@ -39,9 +39,9 @@ module Mongoid
         def check_minimum
           actual = @validator.options[:minimum]
           if actual == @minimum
-            @positive_result_message << " with minimum of #{@minimum}"
+            @positive_message << " with minimum of #{@minimum}"
           else
-            @negative_result_message << " with minimum of #{actual}"
+            @negative_message << " with minimum of #{actual}"
             @result = false
           end
         end
@@ -49,9 +49,9 @@ module Mongoid
         def check_maximum
           actual = @validator.options[:maximum]
           if actual == @maximum
-            @positive_result_message << " with maximum of #{@maximum}"
+            @positive_message << " with maximum of #{@maximum}"
           else
-            @negative_result_message << " with maximum of #{actual}"
+            @negative_message << " with maximum of #{actual}"
             @result = false
           end
         end

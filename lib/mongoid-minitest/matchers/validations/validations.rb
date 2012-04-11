@@ -12,10 +12,10 @@ module Mongoid
           @validator = @klass.validators_on(@field).detect { |v| v.kind.to_s == @type }
 
           if @validator
-            @negative_result_message = "#{@type.inspect} validator on #{@field.inspect}"
-            @positive_result_message = "#{@type.inspect} validator on #{@field.inspect}"
+            @negative_message = "#{@type.inspect} validator on #{@field.inspect}"
+            @positive_message = "#{@type.inspect} validator on #{@field.inspect}"
           else
-            @negative_result_message = "no #{@type.inspect} validator on #{@field.inspect}"
+            @negative_message = "no #{@type.inspect} validator on #{@field.inspect}"
             return false
           end
 
@@ -23,11 +23,11 @@ module Mongoid
         end
 
         def failure_message
-          "Expected #{@klass.inspect} to #{description}, instead got #{@negative_result_message}"
+          "Expected #{@klass.inspect} to #{description}, instead got #{@negative_message}"
         end
 
         def negative_failure_message
-          "Expected #{@klass.inspect} to not #{description}, instead got #{@positive_result_message}"
+          "Expected #{@klass.inspect} to not #{description}, instead got #{@positive_message}"
         end
 
         def description
