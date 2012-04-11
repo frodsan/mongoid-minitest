@@ -1,5 +1,6 @@
 ### 0.0.1
 
++ Added `with_maximum` matcher to `ValidateLengthMatcher`
 + Added `with_min` alias to `with_minimum` matcher.
 + Added `with_minimum` matcher to `ValidateLengthMatcher`.
 + Added `validate_length_of` matcher.

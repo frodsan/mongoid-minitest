@@ -14,5 +14,5 @@ class Person
   validates_uniqueness_of(:code)
   validates_uniqueness_of(:nick, case_sensitive: false)
 
-  validates_length_of(:password, minimum: 8)
+  validates_length_of(:password, minimum: 8, maximum: 16)
 end

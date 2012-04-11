@@ -12,10 +12,16 @@ module Mongoid
         end
         alias :with_min :with_minimum
 
+        def with_maximum(value)
+          @maximum = value
+          self
+        end
+
         def matches?(klass)
           return false unless @result = super(klass)
 
           check_minimum if @minimum
+          check_maximum if @maximum
 
           @result
         end
@@ -23,6 +29,7 @@ module Mongoid
         def description
           desc = []
           desc << " with minimum #{@minimum}" if @minimum
+          desc << " with maximum #{@maximum}" if @maximum
           super << desc.to_sentence
         end
 
@@ -34,6 +41,16 @@ module Mongoid
             @positive_result_message << " with minimum of #{@minimum}"
           else
             @negative_result_message << " with minimum of #{actual}"
+            @result = false
+          end
+        end
+
+        def check_maximum
+          actual = @validator.options[:maximum]
+          if actual == @maximum
+            @positive_result_message << " with maximum of #{@maximum}"
+          else
+            @negative_result_message << " with maximum of #{actual}"
             @result = false
           end
         end
