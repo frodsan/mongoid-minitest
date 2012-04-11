@@ -15,10 +15,12 @@ require "matchers/validations/uniqueness_of"
 require "matchers/validations/length_of"
 require "matchers/validations/format_of"
 require "matchers/validations/exclusion_of"
+require "matchers/associations/associations"
 
 module Mongoid
   module Matchers
     include Mongoid::Matchers::Document
     include Mongoid::Matchers::Validations
+    include Mongoid::Matchers::Associations
   end
 end

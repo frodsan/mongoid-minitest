@@ -69,6 +69,7 @@ See the following examples:
       Module Matchers
         include Mongoid::Matchers::Document
         include Mongoid::Matchers::Validations
+        include Mongoid::Matchers::Associations
       end
     end
 
