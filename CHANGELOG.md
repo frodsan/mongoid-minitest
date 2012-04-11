@@ -1,5 +1,6 @@
 ### 0.0.1
 
++ Added `to_not_allow` matcher to `ValidateExclusionMatcher`.
 + Added `validate_exclusion_of` matcher.
 + Added `to_not_allow` matcher to `ValidateFormatMatcher`.
 + Added `to_allow` matcher to `ValidateFormatMatcher`.
