@@ -1,6 +1,6 @@
 # mongoid-minitest
 
-MiniTest matchers for Mongoid.
+MiniTest matchers for Mongoid. Requires Ruby 1.9.
 
 **First release: 10/04/2012** - 1 week! :grin:
 
