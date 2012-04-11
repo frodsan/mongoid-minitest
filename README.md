@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-Matchers are available at `Mongoid::Matchers` module.
+Matchers are available at `Mongoid::Matchers` module.  
 Setup matchers according to your testing preferences:
 
 ### minitest/unit
