@@ -11,10 +11,16 @@ module Mongoid
           self
         end
 
+        def to_not_allow(invalid_value)
+          @invalid = invalid_value
+          self
+        end
+
         def matches?(klass)
           return false unless @result = super(klass)
 
-          check_valid_value if @valid
+          check_valid_value   if @valid
+          check_invalid_value if @invalid
 
           @result
         end
@@ -22,6 +28,7 @@ module Mongoid
         def description
           desc = []
           desc << " allowing the value #{@valid.inspect}" if @valid
+          desc << " not allowing the value #{@invalid.inspect}" if @invalid
           super << desc.to_sentence
         end
 
@@ -32,6 +39,15 @@ module Mongoid
             @positive_message = @positive_message << " with #{@valid.inspect} as a valid value"
           else
             @negative_message = @negative_message << " with #{@valid.inspect} as an invalid value"
+            @result = false
+          end
+        end
+
+        def check_invalid_value
+          if !(format =~ @invalid)
+            @positive_message = @positive_message << " with #{@invalid.inspect} as a invalid value"
+          else
+            @negative_message = @negative_message << " with #{@invalid.inspect} as a valid value"
             @result = false
           end
         end

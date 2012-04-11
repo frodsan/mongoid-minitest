@@ -20,4 +20,6 @@ describe Mongoid::Matchers::Validations do
 
   it { must validate_format_of(:email).to_allow("a@example.com") }
   it { wont validate_format_of(:email).to_allow("a_example_com") }
+  it { must validate_format_of(:email).to_not_allow("a_example_com") }
+  it { wont validate_format_of(:email).to_not_allow("a@example.com") }
 end
