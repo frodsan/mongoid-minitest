@@ -23,20 +23,15 @@ module Mongoid
         end
 
         def failure_message
-          result_message(@negative_result_message)
+          "Expected #{@klass.inspect} to #{description}, instead got #{@negative_result_message}"
         end
 
         def negative_failure_message
-          result_message(@positive_result_message)
-        end
-
-        def result_message(message)
-          msg =  "Expected to #{@klass.inspect} to #{'not ' if !message.include?('no')}"
-          msg << "#{description}, instead got #{message}"
+          "Expected #{@klass.inspect} to not #{description}, instead got #{@positive_result_message}"
         end
 
         def description
-          "validate #{@type} of #{@field.inspect}"
+          "validate #{@type.inspect} of #{@field.inspect}"
         end
       end
     end

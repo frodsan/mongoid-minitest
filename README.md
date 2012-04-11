@@ -114,6 +114,8 @@ See the following examples:
 
       it { must validate_length_of(:password) }
       it { wont validate_length_of(:code) }
+      it { must validate_length_of(:password).with_minimum(8) }
+      it { wont validate_length_of(:password).with_minimum(0) }
     end
 
 ## Contributing

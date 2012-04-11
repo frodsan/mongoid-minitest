@@ -1,5 +1,6 @@
 ### 0.0.1
 
++ Added `with_minimum` matching chain to `validate_presence_of` matcher.
 + Added `validate_presence_of matcher.
 + Added `case_sensitive` matching chain to `validate_uniqueness_of` matcher.
 + Added `validate_uniqueness_of` matcher.
