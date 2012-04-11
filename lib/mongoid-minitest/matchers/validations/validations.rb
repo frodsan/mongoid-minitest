@@ -23,11 +23,11 @@ module Mongoid
         end
 
         def failure_message
-          "Expected #{@klass.inspect} to #{description}, instead got #{@negative_message}"
+          "Expected #{@klass.inspect} to #{description}; instead got #{@negative_message}"
         end
 
         def negative_failure_message
-          "Expected #{@klass.inspect} to not #{description}, instead got #{@positive_message}"
+          "Expected #{@klass.inspect} to not #{description}; instead got #{@positive_message}"
         end
 
         def description
