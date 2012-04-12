@@ -14,6 +14,7 @@ require "matchers/validations/presence_of"
 require "matchers/validations/uniqueness_of"
 require "matchers/validations/length_of"
 require "matchers/validations/format_of"
+require "matchers/validations/inclusion_of"
 require "matchers/validations/exclusion_of"
 require "matchers/associations/associations"
 

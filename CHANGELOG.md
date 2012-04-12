@@ -1,5 +1,6 @@
 ### 0.0.2
 
++ Added `validate_inclusion_of` matcher.
 + Added `belong_to` association matcher.
 
 ### 0.0.1

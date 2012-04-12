@@ -11,11 +11,11 @@ module Mongoid
           self
         end
 
-        def matches?(actual)
-          return false unless result = super(actual)
+        def matches?(klass)
+          return false unless result = super(klass)
 
           if @not_allowed_values
-            allowed_values = @not_allowed_values - @validator.options[:in]
+            allowed_values = @not_allowed_values - @validator.options[:in].to_a
             if allowed_values.empty?
               @positive_message << " not allowing all values mentioned"
             else

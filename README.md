@@ -109,6 +109,7 @@ See the following examples:
       it { must validate_format_of(:email).to_allow("foo@bar.com") }
       it { must validate_format_of(:email).to_not_allow("foo_bar_com") }
 
+      it { must validate_inclusion_of(:role).to_allow("user", "admin") }
       it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
     end
 
