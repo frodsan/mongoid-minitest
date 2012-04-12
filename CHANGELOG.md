@@ -1,5 +1,7 @@
 ### 0.0.1
 
++ Added `of_type` matcher to `HaveAssociationMatcher`.
++ Added `have_many` association matcher.
 + Added `Mongoid::Matchers::Associations` module.
 + Added `to_not_allow` matcher to `ValidateExclusionMatcher`.
 + Added `validate_exclusion_of` matcher.

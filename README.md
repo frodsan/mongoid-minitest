@@ -114,6 +114,14 @@ See the following examples:
       it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
     end
 
+### Association Matchers
+
+    describe Mongoid::Matchers::Associations do
+      subject { Person }
+
+      it { must have_many(:pets).of_type(Pet) }
+    end
+
 ## Contributing
 
 1. Fork it
