@@ -4,8 +4,6 @@ MiniTest matchers for Mongoid.
 
 Requires Ruby 1.9.
 
-**First release: 10/04/2012** - 1 week! :grin:
-
 ## Installation
 
 Add this line to your application's Gemfile:
