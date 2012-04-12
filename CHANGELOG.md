@@ -1,3 +1,7 @@
+### 0.0.2
+
++ Added `belong_to` association matcher.
+
 ### 0.0.1
 
 + Added `of_type` matcher to `HaveAssociationMatcher`.

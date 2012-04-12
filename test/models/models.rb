@@ -22,4 +22,6 @@ end
 
 class Pet
   include Mongoid::Document
+
+  belongs_to :person
 end

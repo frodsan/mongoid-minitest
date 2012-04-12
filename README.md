@@ -115,9 +115,17 @@ See the following examples:
 ### Association Matchers
 
     describe Mongoid::Matchers::Associations do
-      subject { Person }
+      describe "parent" do
+        subject { Person }
 
-      it { must have_many(:pets).of_type(Pet) }
+        it { must have_many(:pets).of_type(Pet) }
+      end
+
+      describe "child" do
+        subject { Pet }
+
+        it { must belong_to(:person).of_type(Person) }
+      end
     end
 
 ## Contributing
