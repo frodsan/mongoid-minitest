@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 Matchers are available at `Mongoid::Matchers` module.  
-Setup matchers according to your testing preferences:
+Setup matchers according to your testing preference:
 
 ### minitest/unit
 
