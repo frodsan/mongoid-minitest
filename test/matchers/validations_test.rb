@@ -10,6 +10,9 @@ describe "Validations" do
     it { must validate_uniqueness_of(:login).case_insensitive }
     it { must validate_uniqueness_of(:login).scoped_to(:site) }
 
+    it { must validate_length_of(:login).in(5..12) }
+    it { must validate_length_of(:login).within(5..12) }
+
     it { must validate_length_of(:password).with_min(8) }
     it { must validate_length_of(:password).with_minimum(8) }
 
