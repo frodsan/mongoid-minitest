@@ -95,7 +95,7 @@ See the following examples:
       it { must have_fields(:name, :login).of_type(String).with_default_value("me") }
     end
 
-### Validations Matchers
+### Validation Matchers
 
     describe Mongoid::Matchers::Validations do
       subject { Person }

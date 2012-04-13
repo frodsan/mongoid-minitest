@@ -10,7 +10,7 @@
 
 ### 0.0.1
 
-+ Added `of_type(type)` chain matcher to associations matcher.
++ Added `of_type(type)` chain matcher to association matcher.
 + Added `have_many(association_name)` association matcher.
 + Added `Mongoid::Matchers::Associations` module.
 + Added `to_not_allow(*values)` chain matcher to `validate_exclusion_of`.
