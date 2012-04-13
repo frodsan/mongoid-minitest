@@ -3,9 +3,9 @@ module MiniTest
     def assert_must(subject, matcher, msg = nil)
       msg = message(msg) do
         if matcher.respond_to? :failure_message
-          "Expected #{matcher.failure_message}".squeeze
+          "Expected #{matcher.failure_message}".squeeze(" ")
         else
-          "Expected #{subject.inspect} to #{matcher.description}".squeeze
+          "Expected #{subject.inspect} to #{matcher.description}".squeeze(" ")
         end
       end
 
@@ -15,9 +15,9 @@ module MiniTest
     def assert_wont(subject, matcher, msg = nil)
       msg = message(msg) do
         if matcher.respond_to? :negative_failure_message
-          "Expected #{matcher.negative_failure_message}".squeeze
+          "Expected #{matcher.negative_failure_message}".squeeze(" ")
         else
-          "Expected not to #{matcher.description}".squeeze
+          "Expected not to #{matcher.description}".squeeze(" ")
         end
       end
 
