@@ -4,7 +4,8 @@
 
 MiniTest matchers for Mongoid.  
 
-Requires Ruby 1.9.
+* Compatible with Ruby >=1.9.2.
+* Tested on MiniTest 2.x
 
 ## Installation
 
