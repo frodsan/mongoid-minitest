@@ -18,8 +18,8 @@ module Mongoid
         end
         alias :with_max :with_maximum
 
-        def matches?(klass)
-          return false unless @result = super(klass)
+        def matches?(subject)
+          return false unless @result = super(subject)
 
           check_minimum if @minimum
           check_maximum if @maximum

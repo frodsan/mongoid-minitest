@@ -16,8 +16,8 @@ module Mongoid
           self
         end
 
-        def matches?(klass)
-          return false unless @result = super(klass)
+        def matches?(subject)
+          return false unless @result = super(subject)
 
           check_valid_value   if @valid
           check_invalid_value if @invalid

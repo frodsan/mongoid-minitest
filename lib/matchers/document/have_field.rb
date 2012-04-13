@@ -27,11 +27,11 @@ module Mongoid
               error = ""
               result_field = @klass.fields[field]
               
-              if check_type_with(result_field)
+              if check_type_with(result_field.type)
                 error << " of type #{result_field.type.inspect}"
               end
 
-              if check_default_with(result_field)
+              if check_default_with(result_field.default)
                 error << " with default value of #{result_field.default.inspect}"
               end
 
@@ -63,12 +63,12 @@ module Mongoid
 
         private
         
-        def check_type_with(field)
-          @type && field.type != @type
+        def check_type_with(type)
+          @type && type != @type
         end
         
-        def check_default_with(field)
-          !@default.nil? && !field.default.nil? && field.default != @default
+        def check_default_with(default)
+          !@default.nil? && !default.nil? && default != @default
         end
       end
 

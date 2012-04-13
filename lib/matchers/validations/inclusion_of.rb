@@ -11,8 +11,8 @@ module Mongoid
           self
         end
 
-        def matches?(klass)
-          return false unless result = super(klass)
+        def matches?(subject)
+          return false unless result = super(subject)
 
           if @allowed_values
             not_allowed_values = @allowed_values - @validator.options[:in].to_a
