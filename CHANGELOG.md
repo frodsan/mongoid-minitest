@@ -1,5 +1,6 @@
 ### 0.0.2
 
++ Added `scoped_to(*scope)` chain matcher to `validate_uniqueness_of`
 + Added `with_message(custom_message)` chain matcher for validation matchers to test custom messages.
 + Added `DocumentModuleMatcher` class to simplify document matchers.
 + Added `be_stored_in(collection_name)` document matcher.

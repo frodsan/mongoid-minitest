@@ -36,6 +36,8 @@ module Mongoid
         def description
           desc = "validate #{@type.inspect} of #{@field.inspect}"
           desc << " with message: #{@expected_message.inspect}" if @expected_message
+
+          desc
         end
 
         private

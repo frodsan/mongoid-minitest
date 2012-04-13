@@ -8,6 +8,7 @@ describe "Validations" do
     it { must validate_presence_of(:role).with_message("no role") }
 
     it { must validate_uniqueness_of(:login).case_insensitive }
+    it { must validate_uniqueness_of(:login).scoped_to(:site) }
 
     it { must validate_length_of(:password).with_min(8) }
     it { must validate_length_of(:password).with_minimum(8) }
