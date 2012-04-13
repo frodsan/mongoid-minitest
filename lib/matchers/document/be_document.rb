@@ -1,14 +1,9 @@
 module Mongoid
   module Matchers
     module Document
-      class BeDocumentMatcher
-        def matches?(klass)
-          @klass = klass
-          @klass.included_modules.include?(Mongoid::Document)
-        end
-
-        def description
-          "be a Mongoid document"
+      class BeDocumentMatcher < DocumentModulesMatcher
+        def matches?(subject)
+          super(subject, DOCUMENT)
         end
       end
 

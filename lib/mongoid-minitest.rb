@@ -4,6 +4,7 @@ require "minitest/spec"
 
 require "minitest/matchers"
 require "matchers/helpers"
+require "matchers/document/document"
 require "matchers/document/have_field"
 require "matchers/document/be_document"
 require "matchers/document/be_paranoid"

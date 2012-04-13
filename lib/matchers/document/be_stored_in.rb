@@ -1,13 +1,14 @@
 module Mongoid
   module Matchers
     class BeStoredInMatcher
+      include Helpers
+
       def initialize(collection_name)
         @collection_name = collection_name.to_s
       end
 
-      def matches?(klass)
-        @klass = klass.is_a?(Class) ? klass : klass.class
-        @klass.collection_name == @collection_name
+      def matches?(subject)
+        class_of(subject).collection_name == @collection_name
       end
 
       def description

@@ -1,14 +1,9 @@
 module Mongoid
   module Matchers
     module Document
-      class BeVersionedMatcher
-        def matches?(klass)
-          @klass = klass
-          @klass.included_modules.include?(Mongoid::Versioning)
-        end
-
-        def description
-          "be a versioned Mongoid document"
+      class BeVersionedMatcher < DocumentModulesMatcher
+        def matches?(subject)
+          super(subject, VERSIONING)
         end
       end
 
