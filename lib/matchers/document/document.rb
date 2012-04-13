@@ -6,11 +6,13 @@ module Mongoid
       VERSIONING = Mongoid::Versioning
       TIMESTAMPS = Mongoid::Timestamps
 
-      class DocumentModulesMatcher
+      class DocumentModuleMatcher
         include Helpers
-        
-        def matches?(subject, mod)
+        def initialize(mod)
           @mod = mod
+        end
+        
+        def matches?(subject)
           class_of(subject).included_modules.include?(@mod)
         end
 
@@ -25,6 +27,22 @@ module Mongoid
 
           "be a #{msg}Mongoid document"
         end
+      end
+
+      def be_document
+        DocumentModuleMatcher.new(DOCUMENT)
+      end
+
+      def be_paranoid
+        DocumentModuleMatcher.new(PARANOIA)
+      end
+
+      def be_versioned
+        DocumentModuleMatcher.new(VERSIONING)
+      end
+
+      def be_timestamped
+        DocumentModuleMatcher.new(TIMESTAMPS)
       end
     end
   end

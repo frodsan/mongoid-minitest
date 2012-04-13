@@ -1,6 +1,6 @@
 ### 0.0.2
 
-+ Added `DocumentModulesMatcher` class to simplify document matchers.
++ Added `DocumentModuleMatcher` class to simplify document matchers.
 + Added `be_stored_in` document matcher.
 + Added `validate_inclusion_of` matcher.
 + Added `belong_to` association matcher.
