@@ -8,6 +8,7 @@ module Mongoid
 
       class DocumentModuleMatcher
         include Helpers
+
         def initialize(mod)
           @mod = mod
         end
