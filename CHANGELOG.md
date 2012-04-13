@@ -1,38 +1,39 @@
 ### 0.0.2
 
-+ Added `with_message` matcher for validation matchers to test custom messages.
++ Added `with_message(custom_message)` chain matcher for validation matchers to test custom messages.
 + Added `DocumentModuleMatcher` class to simplify document matchers.
-+ Added `be_stored_in` document matcher.
-+ Added `validate_inclusion_of` matcher.
-+ Added `belong_to` association matcher.
++ Added `be_stored_in(collection_name)` document matcher.
++ Added `to_allow(values)` chain matcher to `validate_inclusion_of`.
++ Added `validate_inclusion_of(field)` validation matcher.
++ Added `belong_to(association_name)` association matcher.
 
 ### 0.0.1
 
-+ Added `of_type` matcher to `HaveAssociationMatcher`.
-+ Added `have_many` association matcher.
++ Added `of_type(type)` chain matcher to associations matcher.
++ Added `have_many(association_name)` association matcher.
 + Added `Mongoid::Matchers::Associations` module.
-+ Added `to_not_allow` matcher to `ValidateExclusionMatcher`.
-+ Added `validate_exclusion_of` matcher.
-+ Added `to_not_allow` matcher to `ValidateFormatMatcher`.
-+ Added `to_allow` matcher to `ValidateFormatMatcher`.
-+ Added `validate_format_of` matcher.
-+ Added `with_max` alias to `with_maximum` matcher.
-+ Added `with_maximum` matcher to `ValidateLengthMatcher`
-+ Added `with_min` alias to `with_minimum` matcher.
-+ Added `with_minimum` matcher to `ValidateLengthMatcher`.
-+ Added `validate_length_of` matcher.
-+ Added `case_sensitive` matcher to `ValidateUniquenessMatcher`.
-+ Added `validate_uniqueness_of` matcher.
-+ Added `validate_presence_of` matcher.
-+ Added `have_fields` matcher.
++ Added `to_not_allow(*values)` chain matcher to `validate_exclusion_of`.
++ Added `validate_exclusion_of(field)` validation matcher.
++ Added `to_not_allow(*values)` matcher to `validate_format_of`.
++ Added `to_allow(*values)` matcher to `validate_format_of`.
++ Added `validate_format_of(field)` validation matcher.
++ Added `with_max(value)` alias to `with_maximum` matcher.
++ Added `with_maximum(value)` chain matcher to `validate_length_of`
++ Added `with_min(value)` alias to `with_minimum` matcher.
++ Added `with_minimum(value)` matcher to `validate_length_of`.
++ Added `validate_length_of(field)` validation matcher.
++ Added `case_sensitive` chain matcher to `validate_uniqueness_of`.
++ Added `validate_uniqueness_of(field)` validation matcher.
++ Added `validate_presence_of(field)` validation matcher.
++ Added `have_fields(*fields)` document matcher.
 + Added `be_timestamped` document matcher.
 + Added `be_versioned` document matcher.
 + Added `be_paranoid` document matcher.
-+ Added default failure messages based on description matcher.
 + Added `be_document` document matcher.
-+ Added `with_default_value` matcher to `HaveFieldMatcher`.
-+ Added `of_type` matcher to `HaveFieldMatcher`.
++ Added `with_default_value(default)` chain matcher to `have_field`.
++ Added `of_type(type)` chain matcher to `have_field`.
 + Added `must` and `wont` methods to `MiniTest::Spec`.
-+ Added `have_field` matcher.
++ Added `have_field(field)` document matcher.
++ Added default failure messages based on description matcher.
 + Added `must` and `wont` expectations.
 + Added `assert_must` and `assert_wont` to `MiniTest::Assertions`.
