@@ -2,7 +2,7 @@ module Mongoid
   module Matchers
     module Document
       class HaveFieldMatcher
-        include Mongoid::Matchers::Helpers
+        include Helpers
 
         def initialize(*fields)
           @fields = fields.collect(&:to_s)
@@ -18,8 +18,8 @@ module Mongoid
           self
         end
 
-        def matches?(klass)
-          @klass  = klass.is_a?(Class) ? klass : klass.class
+        def matches?(subject)
+          @klass  = class_of(subject)
           @errors = []
 
           @fields.each do |field|
@@ -27,11 +27,11 @@ module Mongoid
               error = ""
               result_field = @klass.fields[field]
               
-              if @type && result_field.type != @type
+              if check_type_with(result_field)
                 error << " of type #{result_field.type.inspect}"
               end
 
-              if !@default.nil? && !result_field.default.nil? && result_field.default != @default
+              if check_default_with(result_field)
                 error << " with default value of #{result_field.default.inspect}"
               end
 
@@ -45,20 +45,30 @@ module Mongoid
         end
 
         def failure_message
-          "#{@klass.inspect} to #{description}, got #{@errors.to_sentence}"
+          "#{@klass} to #{description}, got #{@errors.to_sentence}"
         end
 
         def negative_failure_message
-          msg =  "#{@klass.inspect} to not #{description}, "
+          msg = "#{@klass.inspect} to not #{description}, "
           msg << "got #{@klass.inspect} to #{description}"
         end
 
         def description
-          desc =  "have #{@fields.size > 1 ? 'fields' : 'field'} named"
+          desc = "have #{@fields.size > 1 ? 'fields' : 'field'} named"
           desc << " #{to_sentence(@fields)}"
           desc << " of type #{@type.inspect}" if @type
           desc << " with default value of #{@default.inspect}" if !@default.nil?
           desc
+        end
+
+        private
+        
+        def check_type_with(field)
+          @type && field.type != @type
+        end
+        
+        def check_default_with(field)
+          !@default.nil? && !field.default.nil? && field.default != @default
         end
       end
 

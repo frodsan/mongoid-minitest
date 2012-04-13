@@ -29,7 +29,7 @@ module Mongoid
         end
 
         def description
-          desc =  []
+          desc = []
           desc << " allowing case insensitive values" if @case_insensitive
           super << desc.to_sentence
         end
