@@ -76,10 +76,12 @@ See the following examples:
     describe Mongoid::Matchers::Document do
       subject { Person }
 
-      it { must be_document }
-      it { must be_paranoid }
-      it { must be_versioned }
-      it { must be_timestamped }
+      it { must be_document }    # if model includes Mongoid::Document
+      it { must be_paranoid }    # if model includes Mongoid::Paranoia
+      it { must be_versioned }   # if model includes Mongoid::Versioning
+      it { must be_timestamped } # if model includes Mongoid::Timestamps
+
+      it { must be_stored_in(:people) }
 
       it { must have_field(:name) }
       it { must have_field(:name).of_type(String) }
