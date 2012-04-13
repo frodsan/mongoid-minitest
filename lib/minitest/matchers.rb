@@ -3,7 +3,7 @@ module MiniTest
     def assert_must(subject, matcher, msg = nil)
       msg = message(msg) do
         if matcher.respond_to? :failure_message
-          matcher.failure_message
+          "Expected #{matcher.failure_message}"
         else
           "Expected #{subject.inspect} to #{matcher.description}"
         end
@@ -15,7 +15,7 @@ module MiniTest
     def assert_wont(subject, matcher, msg = nil)
       msg = message(msg) do
         if matcher.respond_to? :negative_failure_message
-          matcher.negative_failure_message
+          "Expected #{matcher.negative_failure_message}"
         else
           "Expected not to #{matcher.description}"
         end

@@ -9,9 +9,9 @@ module Mongoid
           @type = validation_type.to_s
         end
 
-        def matches?(actual)
-          @klass = actual.is_a?(Class) ? actual : actual.class
-          @validator = @klass.validators_on(@field).detect { |v| v.kind.to_s == @type }
+        def matches?(subject)
+          @klass = class_of(subject)
+          @validator = detect_validator
 
           if @validator
             @negative_message = "#{@type.inspect} validator on #{@field.inspect}"
@@ -25,15 +25,21 @@ module Mongoid
         end
 
         def failure_message
-          "Expected #{@klass.inspect} to #{description}; instead got #{@negative_message}"
+          "#{@klass} to #{description}; instead got #{@negative_message}"
         end
 
         def negative_failure_message
-          "Expected #{@klass.inspect} to not #{description}; instead got #{@positive_message}"
+          "#{@klass} to not #{description}; instead got #{@positive_message}"
         end
 
         def description
           "validate #{@type.inspect} of #{@field.inspect}"
+        end
+
+        private
+
+        def detect_validator
+          @klass.validators_on(@field).detect { |v| v.kind.to_s == @type }
         end
       end
     end

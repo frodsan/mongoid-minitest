@@ -5,21 +5,23 @@ module Mongoid
       BELONGS_TO = Mongoid::Relations::Referenced::In
 
       class HaveAssociationMatcher
+        include Helpers
+
         def initialize(name, type)
           @association = {}
           @association[:name] = name.to_s
           @association[:type] = type
-          @expectation_message = "#{type_description} #{@association[:name].inspect}"
+          @description = "#{type_description} #{@association[:name].inspect}"
         end
 
         def of_type(klass)
           @association[:class] = klass
-          @expectation_message << " of type #{@association[:class].inspect}"
+          @description << " of type #{@association[:class].inspect}"
           self
         end
 
-        def matches?(klass)
-          @klass    = klass.is_a?(Class) ? klass : klass.class
+        def matches?(subject)
+          @klass    = class_of(subject)
           @metadata = @klass.relations[@association[:name]] 
           @result   = true
 
@@ -31,15 +33,11 @@ module Mongoid
         end
 
         def failure_message
-          "Expected #{@klass} to #{@expectation_message}, got #{@negative_message}"
+          "#{@klass} to #{@description}, got #{@negative_message}"
         end
 
         def negative_failure_message
-          "Expected #{@klass} to not #{@expectation_message}, got #{@positive_message}"
-        end
-
-        def description
-          @expectation_message
+          "#{@klass} to not #{@description}, got #{@positive_message}"
         end
 
         private

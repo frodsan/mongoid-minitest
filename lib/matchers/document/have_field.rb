@@ -45,11 +45,11 @@ module Mongoid
         end
 
         def failure_message
-          "Expected #{@klass.inspect} to #{description}, got #{@errors.to_sentence}"
+          "#{@klass.inspect} to #{description}, got #{@errors.to_sentence}"
         end
 
         def negative_failure_message
-          msg =  "Expected #{@klass.inspect} to not #{description}, "
+          msg =  "#{@klass.inspect} to not #{description}, "
           msg << "got #{@klass.inspect} to #{description}"
         end
 
