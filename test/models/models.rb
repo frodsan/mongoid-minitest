@@ -14,6 +14,7 @@ class Person
   has_many :pets
 
   validates_presence_of(:name)
+  validates_presence_of(:role, message: "no role")
   validates_uniqueness_of(:email)
   validates_uniqueness_of(:login, case_sensitive: false)
   validates_length_of(:password, minimum: 8, maximum: 16)

@@ -114,6 +114,10 @@ See the following examples:
 
       it { must validate_inclusion_of(:role).to_allow("user", "admin") }
       it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
+
+      # Testing validators custom messages
+      it { must validate_presence_of(:role).with_message("no role") }
+      it { must validate_length_of(:password).with_min(8).with_message("len >= 8") }
     end
 
 ### Association Matchers
