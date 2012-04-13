@@ -1,3 +1,7 @@
+### 0.0.3
+
++ Added `validates_confirmation_of(field)` validation matcher.
+
 ### 0.0.2 - 04/13/2012
 
 + Added `have_one(association_name)` association matcher.
