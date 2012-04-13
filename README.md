@@ -102,8 +102,6 @@ See the following examples:
 
       it { must validate_presence_of(:name) }
       
-      it { must validate_confirmation_of(:password) }
-
       it { must validate_uniqueness_of(:login).case_insensitive }
       it { must validate_uniqueness_of(:login).scoped_to(:site) }
 
@@ -120,6 +118,9 @@ See the following examples:
 
       it { must validate_inclusion_of(:role).to_allow("user", "admin") }
       it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
+
+      it { must validate_confirmation_of(:password) }
+      it { must validate_acceptance_of(:terms_of_use) }
 
       # Testing validators custom messages
       it { must validate_presence_of(:role).with_message("no role") }

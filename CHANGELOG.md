@@ -1,6 +1,7 @@
 ### 0.0.3
 
-+ Added `validates_confirmation_of(field)` validation matcher.
++ Added `validate_acceptance_of(field)` validation matcher.
++ Added `validate_confirmation_of(field)` validation matcher.
 
 ### 0.0.2 - 04/13/2012
 

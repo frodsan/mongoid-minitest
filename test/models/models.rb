@@ -19,6 +19,7 @@ class Person
   validates_presence_of(:role, message: "no role")
 
   validates_confirmation_of(:password)
+  validates_acceptance_of(:terms_of_use)
 
   validates_uniqueness_of(:email)
   validates_uniqueness_of(:login, scope: :site, case_sensitive: false)
