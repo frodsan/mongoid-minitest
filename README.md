@@ -1,5 +1,7 @@
 # mongoid-minitest
 
+![https://secure.travis-ci.org/frodsan/mongoid-minitest.png](http://travis-ci.org/frodsan/mongoid-minitest)
+
 MiniTest matchers for Mongoid.  
 
 Requires Ruby 1.9.
