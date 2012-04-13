@@ -120,7 +120,7 @@ See the following examples:
       it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
 
       it { must validate_confirmation_of(:password) }
-      it { must validate_acceptance_of(:terms_of_use) }
+      it { must validate_acceptance_of(:terms_of_use).accept_with("1") }
 
       # Testing validators custom messages
       it { must validate_presence_of(:role).with_message("no role") }
