@@ -8,6 +8,9 @@ describe Mongoid::Matchers::Document do
   it { must be_versioned }
   it { must be_timestamped }
 
+  it { must be_stored_in(:people) }
+  it { wont be_stored_in(:pets) }
+
   it { must have_field(:name) }
   it { wont have_field(:noexist) }
 

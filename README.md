@@ -81,7 +81,7 @@ See the following examples:
       it { must be_versioned }   # if model includes Mongoid::Versioning
       it { must be_timestamped } # if model includes Mongoid::Timestamps
 
-      it { must be_stored_in(:people) }
+      it { must be_stored_in(:people) } # checks the collection for model's document
 
       it { must have_field(:name) }
       it { must have_field(:name).of_type(String) }
