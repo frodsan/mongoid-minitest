@@ -20,6 +20,7 @@ module Mongoid
                 when @mod == PARANOIA   then "paranoid "
                 when @mod == VERSIONING then "versioned "
                 when @mod == TIMESTAMPS then "timestamped "
+                else raise "Unknow Mongoid module #{@mod}"
                 end
 
           "be a #{msg}Mongoid document"

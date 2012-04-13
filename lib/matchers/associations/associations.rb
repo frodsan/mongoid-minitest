@@ -88,7 +88,7 @@ module Mongoid
           when BELONGS_TO.name
             (passive ? "be referenced" : "referenced") << " in"
           else
-            raise "Unknown association type '%s'" % type
+            raise "Unknown association type #{type}"
           end
         end
       end
