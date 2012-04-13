@@ -1,6 +1,6 @@
 # mongoid-minitest
 
-![https://secure.travis-ci.org/frodsan/mongoid-minitest.png](http://travis-ci.org/frodsan/mongoid-minitest)
+{<img src="https://secure.travis-ci.org/frodsan/mongoid-minitest.png" />}[http://travis-ci.org/frodsan/mongoid-minitest]
 
 MiniTest matchers for Mongoid.  
 
