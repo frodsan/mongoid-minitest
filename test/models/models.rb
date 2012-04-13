@@ -13,6 +13,7 @@ class Person
   field :site,     type: String
 
   has_many :pets
+  has_one :account
 
   validates_presence_of(:name)
   validates_presence_of(:role, message: "no role")
@@ -26,6 +27,12 @@ class Person
 end
 
 class Pet
+  include Mongoid::Document
+
+  belongs_to :person
+end
+
+class Account
   include Mongoid::Document
 
   belongs_to :person

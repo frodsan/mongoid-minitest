@@ -1,5 +1,6 @@
-### 0.0.2
+### 0.0.2 - 04/13/2012
 
++ Added `have_one(association_name)` association matcher.
 + Added `in(range)` alias to `within` matcher.
 + Added `within(range)` chain matcher to `validate_length_of`.
 + Added `scoped_to(*scope)` chain matcher to `validate_uniqueness_of`
@@ -10,7 +11,7 @@
 + Added `validate_inclusion_of(field)` validation matcher.
 + Added `belong_to(association_name)` association matcher.
 
-### 0.0.1
+### 0.0.1 - 04/11/2012
 
 + Added `of_type(type)` chain matcher to association matcher.
 + Added `have_many(association_name)` association matcher.

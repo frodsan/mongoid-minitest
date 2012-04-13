@@ -1,6 +1,7 @@
 module Mongoid
   module Matchers
     module Associations
+      HAS_ONE    = Mongoid::Relations::Referenced::One
       HAS_MANY   = Mongoid::Relations::Referenced::Many
       BELONGS_TO = Mongoid::Relations::Referenced::In
 
@@ -81,6 +82,8 @@ module Mongoid
         def type_description(type = nil, passive = true)
           type ||= @association[:type]
           case type.name
+          when HAS_ONE.name
+            (passive ? "reference" : "references") << " one"
           when HAS_MANY.name
             (passive ? "reference" : "references") << " many"
           when BELONGS_TO.name
@@ -89,6 +92,10 @@ module Mongoid
             raise "Unknown association type #{type}"
           end
         end
+      end
+
+      def have_one(association_name)
+        HaveAssociationMatcher.new(association_name, HAS_ONE)
       end
 
       def have_many(association_name)

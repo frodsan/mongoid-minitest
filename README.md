@@ -127,16 +127,23 @@ See the following examples:
 ### Association Matchers
 
     describe Mongoid::Matchers::Associations do
-      describe "parent" do
+      describe Person do
         subject { Person }
 
+        it { must have_one(:account).of_type(Account) }
         it { must have_many(:pets).of_type(Pet) }
       end
 
-      describe "child" do
+      describe Pet do
         subject { Pet }
 
         it { must belong_to(:person).of_type(Person) }
+      end
+
+      describe Account do
+        subject { Account }
+
+        it { must belong_to(:person).of_type(Person) }
       end
     end
 
