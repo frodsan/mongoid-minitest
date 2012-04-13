@@ -26,8 +26,8 @@ module Mongoid
           @result   = true
 
           check_association_name
-          check_association_type  if @result
-          check_association_class if @result
+          check_association_type
+          check_association_class if @association[:class]
 
           @result
         end
@@ -70,7 +70,7 @@ module Mongoid
         end
 
         def check_association_class
-          if !@association[:class].nil? and @association[:class] != @metadata.klass
+          if @association[:class] != @metadata.klass
             @negative_message = "#{@positive_message} of type #{@metadata.klass}"
             @result = false
           else
