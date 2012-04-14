@@ -1,5 +1,6 @@
 ### 0.0.3
 
++ Added `have_and_belong_to_many(association_name)` association matcher.
 + Added `validate_associated(association_name) validation matcher'.
 + Added `accept_with(value)` chain matcher to `validate_acceptance_of`.
 + Added `validate_acceptance_of(field)` validation matcher.
@@ -18,7 +19,7 @@
 + Added `validate_inclusion_of(field)` validation matcher.
 + Added `belong_to(association_name)` association matcher.
 
-### 0.0.1 - 04/11/2012
+### 0.0.1 - 04/12/2012
 
 + Added `of_type(type)` chain matcher to association matcher.
 + Added `have_many(association_name)` association matcher.

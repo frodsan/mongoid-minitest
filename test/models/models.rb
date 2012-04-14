@@ -12,8 +12,9 @@ class Person
   field :role,     type: String
   field :site,     type: String
 
-  has_many :pets
   has_one :account
+  has_many :pets
+  has_and_belongs_to_many :friends, class_name: "Person"
 
   validates_presence_of(:name)
   validates_presence_of(:role, message: "no role")

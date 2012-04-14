@@ -1,8 +1,9 @@
 module Mongoid
   module Matchers
     module Associations
-      HAS_ONE    = Mongoid::Relations::Referenced::One
-      HAS_MANY   = Mongoid::Relations::Referenced::Many
+      HAS_ONE = Mongoid::Relations::Referenced::One
+      HAS_MANY = Mongoid::Relations::Referenced::Many
+      HAS_AND_BELONGS_TO_MANY = Mongoid::Relations::Referenced::ManyToMany
       BELONGS_TO = Mongoid::Relations::Referenced::In
 
       class HaveAssociationMatcher
@@ -86,6 +87,8 @@ module Mongoid
             (passive ? "reference" : "references") << " one"
           when HAS_MANY.name
             (passive ? "reference" : "references") << " many"
+          when HAS_AND_BELONGS_TO_MANY.name
+            (passive ? "reference" : "references") << " and referenced in many"
           when BELONGS_TO.name
             (passive ? "be referenced" : "referenced") << " in"
           else
@@ -100,6 +103,10 @@ module Mongoid
 
       def have_many(association_name)
         HaveAssociationMatcher.new(association_name, HAS_MANY)
+      end
+
+      def have_and_belong_to_many(association_name)
+        HaveAssociationMatcher.new(association_name, HAS_AND_BELONGS_TO_MANY)
       end
 
       def belong_to(association_name)
