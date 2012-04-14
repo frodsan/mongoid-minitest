@@ -16,6 +16,7 @@ require "matchers/validations/inclusion"
 require "matchers/validations/exclusion"
 require "matchers/validations/confirmation"
 require "matchers/validations/acceptance"
+require "matchers/validations/associated"
 require "matchers/associations/associations"
 
 module Mongoid

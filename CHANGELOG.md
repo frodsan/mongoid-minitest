@@ -1,5 +1,6 @@
 ### 0.0.3
 
++ Added `validate_associated(association_name) validation matcher'.
 + Added `accept_with(value)` chain matcher to `validate_acceptance_of`.
 + Added `validate_acceptance_of(field)` validation matcher.
 + Added `validate_confirmation_of(field)` validation matcher.

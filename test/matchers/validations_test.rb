@@ -27,5 +27,7 @@ describe "Validations" do
 
     it { must validate_confirmation_of(:password) }
     it { must validate_acceptance_of(:terms_of_use).accept_with("1") }
+
+    it { must validate_associated(:pets) }
   end
 end
