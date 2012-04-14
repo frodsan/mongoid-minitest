@@ -1,5 +1,6 @@
 ### 0.0.3
 
++ Added `embed_one(association_name)` association matcher.
 + Added `have_and_belong_to_many(association_name)` association matcher.
 + Added `validate_associated(association_name) validation matcher'.
 + Added `accept_with(value)` chain matcher to `validate_acceptance_of`.

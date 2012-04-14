@@ -16,6 +16,8 @@ class Person
   has_many :pets
   has_and_belongs_to_many :friends, class_name: "Person"
 
+  embeds_one :profile
+
   validates_presence_of(:name)
   validates_presence_of(:role, message: "no role")
 
@@ -44,4 +46,8 @@ class Account
   include Mongoid::Document
 
   belongs_to :person
+end
+
+class Profile
+  include Mongoid::Document
 end
