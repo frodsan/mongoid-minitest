@@ -9,7 +9,7 @@ describe "Associations" do
     it { must have_one(:account).of_type(Account) }
     it { must have_and_belong_to_many(:friends).of_type(Person) }
 
-    it { must embed_one(:profile) }
+    it { must embed_one(:proile) }
   end
 
   describe Pet do

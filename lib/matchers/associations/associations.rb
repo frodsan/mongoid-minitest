@@ -47,16 +47,15 @@ module Mongoid
 
         def check_association_name
           if @metadata.nil?
-            @negative_message = "no association named #{@association[:name]}"
+            @negative_message = "no association named #{@association[:name].inspect}"
             @result = false
           else
-            @positive_message = "association named #{@association[:name]}"
+            @positive_message = "association named #{@association[:name].inspect}"
           end
         end
 
         def check_association_type
-          @relation = @metadata.relation
-          if @relation != @association[:type]
+          if !@metadata.nil? && @metadata.relation != @association[:type]
             @negative_message = association_type_failure_message
             @result = false
           else
@@ -66,7 +65,7 @@ module Mongoid
 
         def association_type_failure_message
           msg = "#{@klass.inspect}"
-          msg << " #{type_description(@relation, false)}"
+          msg << " #{type_description(@association[:type], false)}"
           msg << " #{@association[:name].inspect}"
 
           msg
