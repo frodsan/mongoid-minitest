@@ -1,6 +1,7 @@
 ### 0.0.3
 
-+ Added `embed_many` association matcher.
++ Added `embedded_in(association_name)` association matcher.
++ Added `embed_many(association_name)` association matcher.
 + Fixed issue check `association_type` if metadata is not nil.
 + Added `embed_one(association_name)` association matcher.
 + Added `have_and_belong_to_many(association_name)` association matcher.

@@ -25,4 +25,10 @@ describe "Associations" do
     it { must belong_to(:person).of_type(Person) }
   end
 
+  describe Site do
+    subject { Site }
+
+    it { must embedded_in(:person) }
+  end
+
 end

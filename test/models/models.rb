@@ -55,4 +55,6 @@ end
 
 class Site
   include Mongoid::Document
+
+  embedded_in :person
 end

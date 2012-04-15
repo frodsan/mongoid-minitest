@@ -146,13 +146,13 @@ See the following examples:
       describe Pet do
         subject { Pet }
 
-        it { must belong_to(:person).of_type(Person) }
+        it { must belong_to(:person) }
       end
 
-      describe Account do
-        subject { Account }
+      describe Site do
+        subject { Site }
 
-        it { must belong_to(:person).of_type(Person) }
+        it { must embedded_in(:person) }
       end
     end
 
