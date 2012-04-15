@@ -9,7 +9,7 @@ MiniTest matchers for Mongoid.
 
 Add this line to your application's Gemfile:
 
-    gem 'mongoid-minitest'
+    gem "mongoid-minitest", "~> 0.0.2"
 
 And then execute:
 
