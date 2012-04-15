@@ -6,6 +6,7 @@ module Mongoid
       HAS_AND_BELONGS_TO_MANY = Mongoid::Relations::Referenced::ManyToMany
       BELONGS_TO = Mongoid::Relations::Referenced::In
       EMBEDS_ONE = Mongoid::Relations::Embedded::One
+      EMBEDS_MANY = Mongoid::Relations::Embedded::Many
 
       class HaveAssociationMatcher
         include Helpers
@@ -93,6 +94,8 @@ module Mongoid
             (passive ? "be referenced" : "referenced") << " in"
           when EMBEDS_ONE.name
             (passive ? "embed" : "embeds") << " one"
+          when EMBEDS_MANY.name
+            (passive ? "embed" : "embeds") << " many"
           else
             raise "Unknown association type #{type}"
           end
@@ -117,6 +120,10 @@ module Mongoid
 
       def embed_one(association_name)
         HaveAssociationMatcher.new(association_name, EMBEDS_ONE)
+      end
+
+      def embed_many(association_name)
+        HaveAssociationMatcher.new(association_name, EMBEDS_MANY)
       end
     end
   end

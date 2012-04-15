@@ -17,6 +17,7 @@ class Person
   has_and_belongs_to_many :friends, class_name: "Person"
 
   embeds_one :profile
+  embeds_many :sites
 
   validates_presence_of(:name)
   validates_presence_of(:role, message: "no role")
@@ -49,5 +50,9 @@ class Account
 end
 
 class Profile
+  include Mongoid::Document
+end
+
+class Site
   include Mongoid::Document
 end

@@ -140,6 +140,7 @@ See the following examples:
         it { must have_and_belong_to_many(:friends) }
 
         it { must embed_one(:profile) }
+        it { must embed_many(:sites) }
       end
 
       describe Pet do
