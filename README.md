@@ -2,14 +2,16 @@
 
 MiniTest matchers for Mongoid.  
 
-* Compatible with Ruby >=1.9.2.
-* Tested on MiniTest 2.x
+## Requirements
+
+* Ruby 1.9.x
+* Mongoid 2.x
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem "mongoid-minitest", "~> 0.0.2"
+    gem "mongoid-minitest"
 
 And then execute:
 
