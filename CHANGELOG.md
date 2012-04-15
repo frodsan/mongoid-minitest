@@ -1,5 +1,6 @@
 ### 0.0.3
 
++ Added `have_index_for(indexed_field)` document matcher.
 + Added `embedded_in(association_name)` association matcher.
 + Added `embed_many(association_name)` association matcher.
 + Fixed issue check `association_type` if metadata is not nil.

@@ -12,6 +12,8 @@ class Person
   field :role,     type: String
   field :site,     type: String
 
+  index :name
+
   has_one :account
   has_many :pets
   has_and_belongs_to_many :friends, class_name: "Person"
