@@ -1,4 +1,4 @@
-### 0.0.3 - 04/14/2012
+### 0.0.3 - 04/15/2012
 
 + Added `have_index_for(indexed_field)` document matcher.
 + Added `embedded_in(association_name)` association matcher.
