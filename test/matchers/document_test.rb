@@ -16,4 +16,10 @@ describe "Document" do
 
     it { must have_index_for(:name) }
   end
+
+  describe Pet do
+    subject { Pet }
+
+    it { must have_index_for(:person) }
+  end
 end

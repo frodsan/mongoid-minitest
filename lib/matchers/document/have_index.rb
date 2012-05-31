@@ -10,7 +10,7 @@ module Mongoid
       def matches?(subject)
         @klass = class_of(subject)
 
-        if !@klass.index_options[@field.to_sym]
+        unless @klass.index_options[@field.to_sym] || @klass.index_options["#{@field}_id"]
           @error = "no index for #{@field.inspect}"
 
           return false

@@ -42,7 +42,7 @@ end
 class Pet
   include Mongoid::Document
 
-  belongs_to :person
+  belongs_to :person, index: :true
 end
 
 class Account
