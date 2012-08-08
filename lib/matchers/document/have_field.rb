@@ -31,8 +31,8 @@ module Mongoid
                 error << " of type #{result_field.type.inspect}"
               end
 
-              if check_default_with(result_field.default)
-                error << " with default value of #{result_field.default.inspect}"
+              if check_default_with(result_field.default_val)
+                error << " with default value of #{result_field.default_val.inspect}"
               end
 
               @errors << "field #{field.inspect << error}" if !error.blank?

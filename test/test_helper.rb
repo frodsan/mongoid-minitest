@@ -4,7 +4,7 @@ require "minitest/autorun"
 Dir[File.dirname(__FILE__) + "/models/*.rb"].each { |f| require f }
 
 Mongoid.configure do |config|
-  config.master = Mongo::Connection.new.db("mongoid-minitest-test")
+	config.connect_to("mongoid-minitest-test")
 end
 
 class MiniTest::Spec
