@@ -8,7 +8,7 @@ module Mongoid
       end
 
       def matches?(subject)
-        class_of(subject).collection_name == @collection_name
+        class_of(subject).collection_name.to_s == @collection_name
       end
 
       def description
