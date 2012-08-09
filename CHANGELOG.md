@@ -1,5 +1,7 @@
 ## 0.1.1 - unreleased
 
++ Remove required ruby version from the gemspec. Fixes [#9](https://github.com/frodsan/mongoid-minitest/pull/9).
+
 ## 0.1.0 - August 09, 2012
 
 + Change support to only Ruby 1.9.3.
