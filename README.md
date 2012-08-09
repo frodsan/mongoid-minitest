@@ -1,10 +1,10 @@
 # mongoid-minitest [![Build Status](https://secure.travis-ci.org/frodsan/mongoid-minitest.png?branch=master&.png)](http://travis-ci.org/frodsan/mongoid-minitest) [![Dependency Status](https://gemnasium.com/frodsan/mongoid-minitest.png)](https://gemnasium.com/frodsan/mongoid-minitest)
 
-MiniTest matchers for Mongoid.  
+MiniTest matchers for Mongoid.
 
 ## Requirements
 
-* Ruby 1.9.x
+* Ruby 1.9.3
 * Mongoid 2.x
 
 ## Installation
@@ -23,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-Matchers are available at `Mongoid::Matchers` module.  
+Matchers are available at `Mongoid::Matchers` module.
 Setup matchers according to your testing preference:
 
 ### minitest/unit
@@ -105,7 +105,7 @@ See the following examples:
       subject { Person }
 
       it { must validate_presence_of(:name) }
-      
+
       it { must validate_uniqueness_of(:login).case_insensitive }
       it { must validate_uniqueness_of(:login).scoped_to(:site) }
 

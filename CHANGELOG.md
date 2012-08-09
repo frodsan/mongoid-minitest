@@ -1,3 +1,7 @@
+## 0.1.0 - unreleased
+
++ Support only Ruby 1.9.3.
+
 ## 0.0.3.1 - 31/05/2012
 
 + Change `have_index_for(indexed_field)` to work with `belongs_to :association, index: true`.
