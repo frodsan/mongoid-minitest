@@ -1,8 +1,8 @@
 ## 0.1.0 - unreleased
 
 + Change support to only Ruby 1.9.3.
-+ Bump mongoid version to 3.0.2 - [gr4y](https://github.com/gr4y).
-+ Bump minitest version to 3.3.0 - [gr4y](https://github.com/gr4y).
++ Bump mongoid version to 3.0.2 and minitest version to 3.3.0 and minitest version
+  to 3.3.0 - *Sascha Wessel*.
 
 ## 0.0.3.1 - 31/05/2012
 
