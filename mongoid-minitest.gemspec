@@ -19,4 +19,5 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'minitest', '~> 3.3.0'
   gem.add_dependency 'mongoid' , '~> 3.0.2'
+  gem.add_development_dependency 'rake'
 end
