@@ -27,7 +27,7 @@ module Mongoid
 
         def matches?(subject)
           @klass    = class_of(subject)
-          @metadata = @klass.relations[@association[:name]] 
+          @metadata = @klass.relations[@association[:name]]
           @result   = true
 
           check_association_name
@@ -86,19 +86,19 @@ module Mongoid
           type ||= @association[:type]
           case type.name
           when HAS_ONE.name
-            (passive ? "reference" : "references") << " one"
+            (passive ? 'reference' : 'references') << ' one'
           when HAS_MANY.name
-            (passive ? "reference" : "references") << " many"
+            (passive ? 'reference' : 'references') << ' many'
           when HAS_AND_BELONGS_TO_MANY.name
-            (passive ? "reference" : "references") << " and referenced in many"
+            (passive ? 'reference' : 'references') << ' and referenced in many'
           when BELONGS_TO.name
-            (passive ? "be referenced" : "referenced") << " in"
+            (passive ? 'be referenced' : 'referenced') << ' in'
           when EMBEDS_ONE.name
-            (passive ? "embed" : "embeds") << " one"
+            (passive ? 'embed' : 'embeds') << ' one'
           when EMBEDS_MANY.name
-            (passive ? "embed" : "embeds") << " many"
+            (passive ? 'embed' : 'embeds') << ' many'
           when EMBEDDED_IN.name
-            (passive ? "be" : "is") << " embedded in"
+            (passive ? 'be' : 'is') << ' embedded in'
           else
             raise "Unknown association type #{type}"
           end

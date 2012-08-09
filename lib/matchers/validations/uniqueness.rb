@@ -28,7 +28,7 @@ module Mongoid
         def description
           desc = []
           desc << " scoped to #{to_sentence(@scope)}" if @scope
-          desc << " allowing case insensitive values" if @case_insensitive
+          desc << ' allowing case insensitive values' if @case_insensitive
           super << desc.to_sentence
         end
 
@@ -48,9 +48,9 @@ module Mongoid
 
         def check_case_sensivity
           if @validator.options[:case_sensitive] == false
-            @positive_message << " with case insensitive values"
+            @positive_message << ' with case insensitive values'
           else
-            @negative_message << " without case insensitive values"
+            @negative_message << ' without case insensitive values'
             @result = false
           end
         end

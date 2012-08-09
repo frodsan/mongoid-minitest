@@ -12,17 +12,17 @@ module Mongoid
         def initialize(mod)
           @mod = mod
         end
-        
+
         def matches?(subject)
           class_of(subject).included_modules.include?(@mod)
         end
 
         def description
           msg = case
-                when @mod == DOCUMENT   then ""
-                when @mod == PARANOIA   then "paranoid "
-                when @mod == VERSIONING then "versioned "
-                when @mod == TIMESTAMPS then "timestamped "
+                when @mod == DOCUMENT   then ''
+                when @mod == PARANOIA   then 'paranoid '
+                when @mod == VERSIONING then 'versioned '
+                when @mod == TIMESTAMPS then 'timestamped '
                 else raise "Unknow Mongoid module #{@mod}"
                 end
 

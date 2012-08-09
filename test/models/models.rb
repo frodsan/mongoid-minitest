@@ -4,9 +4,9 @@ class Person
   include Mongoid::Versioning
   include Mongoid::Timestamps
 
-  field :login,    type: String,  default: "me"
+  field :login,    type: String,  default: 'me'
   field :password, type: String
-  field :name,     type: String,  default: "me"
+  field :name,     type: String,  default: 'me'
   field :age,      type: Integer
   field :email,    type: String
   field :role,     type: String
@@ -16,13 +16,13 @@ class Person
 
   has_one :account
   has_many :pets
-  has_and_belongs_to_many :friends, class_name: "Person"
+  has_and_belongs_to_many :friends, class_name: 'Person'
 
   embeds_one :profile
   embeds_many :sites
 
   validates_presence_of(:name)
-  validates_presence_of(:role, message: "no role")
+  validates_presence_of(:role, message: 'no role')
 
   validates_confirmation_of(:password)
   validates_acceptance_of(:terms_of_use)
@@ -35,8 +35,8 @@ class Person
 
   validates_format_of(:email, with: /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i)
 
-  validates_inclusion_of(:role, in: ["admin", "user"])
-  validates_exclusion_of(:email, in: ["foo@bar.com", "fizz@buzz.com"])
+  validates_inclusion_of(:role, in: ['admin', 'user'])
+  validates_exclusion_of(:email, in: ['foo@bar.com', 'fizz@buzz.com'])
 end
 
 class Pet

@@ -1,11 +1,11 @@
-require "test_helper"
+require 'test_helper'
 
-describe "Validations" do
+describe 'Validations' do
   describe Person do
     subject { Person }
 
     it { must validate_presence_of(:name) }
-    it { must validate_presence_of(:role).with_message("no role") }
+    it { must validate_presence_of(:role).with_message('no role') }
 
     it { must validate_uniqueness_of(:login).case_insensitive }
     it { must validate_uniqueness_of(:login).scoped_to(:site) }
@@ -19,14 +19,14 @@ describe "Validations" do
     it { must validate_length_of(:password).with_max(16) }
     it { must validate_length_of(:password).with_maximum(16) }
 
-    it { must validate_format_of(:email).to_allow("foo@bar.com") }
-    it { must validate_format_of(:email).to_not_allow("foo_bar_com") }
+    it { must validate_format_of(:email).to_allow('foo@bar.com') }
+    it { must validate_format_of(:email).to_not_allow('foo_bar_com') }
 
-    it { must validate_inclusion_of(:role).to_allow("user", "admin") }
-    it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
+    it { must validate_inclusion_of(:role).to_allow('user', 'admin') }
+    it { must validate_exclusion_of(:email).to_not_allow('foo@bar.com', 'fizz@buzz.com') }
 
     it { must validate_confirmation_of(:password) }
-    it { must validate_acceptance_of(:terms_of_use).accept_with("1") }
+    it { must validate_acceptance_of(:terms_of_use).accept_with('1') }
 
     it { must validate_associated(:pets) }
   end

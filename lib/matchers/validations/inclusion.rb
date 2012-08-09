@@ -17,15 +17,15 @@ module Mongoid
           if @allowed_values
             not_allowed_values = @allowed_values - @validator.options[:in].to_a
             if not_allowed_values.empty?
-              @positive_message << " allowing all values mentioned"
+              @positive_message << ' allowing all values mentioned'
             else
-              @negative_message << " not allowing the following the  values:"
+              @negative_message << ' not allowing the following the  values:'
               @negative_message << " #{not_allowed_values.inspect}"
               result = false
             end
           end
-          
-          result 
+
+          result
         end
 
         def description
