@@ -174,3 +174,8 @@ See the following examples:
 ## Unit Tests
 
 To run unit tests, run `bundle exec rake`.
+
+## License
+
+MIT License. Copyright 2012 Francesco Rodriguez. See [LICENSE](https://github.com/frodsan/lego/blob/master/LICENSE)
+for more information.
