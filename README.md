@@ -71,9 +71,9 @@ See the following examples:
 
     Module Mongoid
       Module Matchers
-        include Mongoid::Matchers::Document
-        include Mongoid::Matchers::Validations
-        include Mongoid::Matchers::Associations
+        include Document
+        include Validations
+        include Associations
       end
     end
 
