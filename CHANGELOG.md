@@ -1,15 +1,15 @@
-## 0.1.0 - unreleased
+## 0.1.0 - August 09, 2012
 
 + Change support to only Ruby 1.9.3.
 + Bump mongoid version to 3.0.2 and minitest version to 3.3.0 and minitest version
   to 3.3.0 - *Sascha Wessel*.
 
-## 0.0.3.1 - 31/05/2012
+## 0.0.3.1 - May 31, 2012
 
 + Change `have_index_for(indexed_field)` to work with `belongs_to :association, index: true`.
   Fixes [#7](https://github.com/frodsan/mongoid-minitest/issues/7).
 
-## 0.0.3 - 04/15/2012
+## 0.0.3 - April 15, 2012
 
 + Add `have_index_for(indexed_field)` document matcher.
 + Add `embedded_in(association_name)` association matcher.
@@ -22,7 +22,7 @@
 + Add `validate_acceptance_of(field)` validation matcher.
 + Add `validate_confirmation_of(field)` validation matcher.
 
-## 0.0.2 - 04/13/2012
+## 0.0.2 - April 13, 2012
 
 + Add `have_one(association_name)` association matcher.
 + Add `in(range)` alias to `within` matcher.
@@ -36,7 +36,7 @@
 + Add `validate_inclusion_of(field)` validation matcher.
 + Add `belong_to(association_name)` association matcher.
 
-## 0.0.1 - 04/12/2012
+## 0.0.1 - April 12, 2012
 
 + Add `of_type(type)` chain matcher to association matcher.
 + Add `have_many(association_name)` association matcher.
