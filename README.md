@@ -2,10 +2,13 @@
 
 MiniTest matchers for Mongoid.
 
-## Requirements
+## Support
+
+This gem supports:
 
 * Ruby 1.9.3
-* Mongoid 2.x
+* Mongoid ~>3.0.2
+* MiniTest ~>3.3.0
 
 ## Installation
 
