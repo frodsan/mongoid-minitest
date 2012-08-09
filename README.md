@@ -53,7 +53,7 @@ See the following examples:
 
     # minitest/spec
     describe Dummy
-      it "sould test matchers" do
+      it "should test matchers" do
         Dummy.must have_field(:name)
         Dummy.wont have_field(:none)
       end
