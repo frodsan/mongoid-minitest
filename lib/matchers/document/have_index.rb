@@ -10,10 +10,12 @@ module Mongoid
       def matches?(subject)
         @klass = class_of(subject)
 
-        unless @klass.index_options[@field.to_sym] || @klass.index_options["#{@field}_id"]
-          @error = "no index for #{@field.inspect}"
+        @klass.index_options.each do |key, options|
+          unless key[@field.to_sym] || key["#{@field}_id"]
+            @error = "no index for #{@field.inspect}"
 
-          return false
+            return false
+          end
         end
 
         true

@@ -12,7 +12,7 @@ class Person
   field :role,     type: String
   field :site,     type: String
 
-  index :name
+  index({ name: 1 }, { name: 'name' })
 
   has_one :account
   has_many :pets
