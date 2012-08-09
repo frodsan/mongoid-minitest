@@ -1,5 +1,5 @@
 module Mongoid
   module MiniTest
-    VERSION = '0.0.3.1'
+    VERSION = '0.1.0'
   end
 end
