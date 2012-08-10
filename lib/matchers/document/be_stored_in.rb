@@ -1,8 +1,6 @@
 module Mongoid
   module Matchers
-    class BeStoredInMatcher
-      include Helpers
-
+    class BeStoredInMatcher < Matcher
       def initialize(collection_name)
         @collection_name = collection_name.to_s
       end

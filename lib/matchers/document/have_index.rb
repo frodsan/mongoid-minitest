@@ -1,8 +1,6 @@
 module Mongoid
   module Matchers
-    class HaveIndexMatcher
-      include Helpers
-
+    class HaveIndexMatcher < Matcher
       def initialize(field)
         @field = field.to_s
       end

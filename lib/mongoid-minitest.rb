@@ -1,9 +1,9 @@
 gem 'minitest'
 require 'mongoid'
 require 'minitest/spec'
-
 require 'minitest/matchers'
-require 'matchers/helpers'
+
+require 'matchers/matcher'
 require 'matchers/document/document'
 require 'matchers/document/have_field'
 require 'matchers/document/be_stored_in'

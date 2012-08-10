@@ -9,9 +9,7 @@ module Mongoid
       EMBEDS_MANY = Mongoid::Relations::Embedded::Many
       EMBEDDED_IN = Mongoid::Relations::Embedded::In
 
-      class HaveAssociationMatcher
-        include Helpers
-
+      class HaveAssociationMatcher < Matcher
         def initialize(name, type)
           @association = {}
           @association[:name] = name.to_s

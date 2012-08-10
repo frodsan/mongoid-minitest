@@ -6,9 +6,7 @@ module Mongoid
       VERSIONING = Mongoid::Versioning
       TIMESTAMPS = Mongoid::Timestamps
 
-      class DocumentModuleMatcher
-        include Helpers
-
+      class DocumentMatcher < Matcher
         def initialize mod
           @mod = mod
         end
@@ -31,19 +29,19 @@ module Mongoid
       end
 
       def be_document
-        DocumentModuleMatcher.new DOCUMENT
+        DocumentMatcher.new DOCUMENT
       end
 
       def be_paranoid
-        DocumentModuleMatcher.new PARANOIA
+        DocumentMatcher.new PARANOIA
       end
 
       def be_versioned
-        DocumentModuleMatcher.new VERSIONING
+        DocumentMatcher.new VERSIONING
       end
 
       def be_timestamped
-        DocumentModuleMatcher.new TIMESTAMPS
+        DocumentMatcher.new TIMESTAMPS
       end
     end
   end

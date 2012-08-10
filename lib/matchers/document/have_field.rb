@@ -1,9 +1,7 @@
 module Mongoid
   module Matchers
     module Document
-      class HaveFieldMatcher
-        include Helpers
-
+      class HaveFieldMatcher < Matcher
         def initialize(*fields)
           @fields = fields.collect(&:to_s)
         end
@@ -26,7 +24,7 @@ module Mongoid
             if @klass.fields.include?(field)
               error = ""
               result_field = @klass.fields[field]
-              
+
               if check_type_with(result_field.type)
                 error << " of type #{result_field.type.inspect}"
               end
@@ -62,11 +60,11 @@ module Mongoid
         end
 
         private
-        
+
         def check_type_with(type)
           @type && type != @type
         end
-        
+
         def check_default_with(default)
           !@default.nil? && !default.nil? && default != @default
         end
