@@ -1,9 +1,7 @@
 module Mongoid
   module Matchers
     module Validations
-      class HaveValidationMatcher
-        include Mongoid::Matchers::Helpers
-
+      class HaveValidationMatcher < Matcher
         def initialize(field, validation_type)
           @field = field.to_s
           @type = validation_type.to_s
