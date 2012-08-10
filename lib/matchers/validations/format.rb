@@ -2,21 +2,21 @@ module Mongoid
   module Matchers
     module Validations
       class ValidateFormatMatcher < HaveValidationMatcher
-        def initialize(field)
-          super(field, :format)
+        def initialize field
+          super field, :format
         end
 
-        def to_allow(valid_value)
+        def to_allow valid_value
           @valid = valid_value
           self
         end
 
-        def to_not_allow(invalid_value)
+        def to_not_allow invalid_value
           @invalid = invalid_value
           self
         end
 
-        def matches?(subject)
+        def matches? subject
           return false unless @result = super(subject)
 
           check_valid_value   if @valid
@@ -57,8 +57,8 @@ module Mongoid
         end
       end
 
-      def validate_format_of(field)
-        ValidateFormatMatcher.new(field)
+      def validate_format_of field
+        ValidateFormatMatcher.new field
       end
     end
   end

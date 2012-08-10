@@ -9,12 +9,12 @@ module Mongoid
       class DocumentModuleMatcher
         include Helpers
 
-        def initialize(mod)
+        def initialize mod
           @mod = mod
         end
 
-        def matches?(subject)
-          class_of(subject).included_modules.include?(@mod)
+        def matches? subject
+          class_of(subject).included_modules.include? @mod
         end
 
         def description
@@ -31,19 +31,19 @@ module Mongoid
       end
 
       def be_document
-        DocumentModuleMatcher.new(DOCUMENT)
+        DocumentModuleMatcher.new DOCUMENT
       end
 
       def be_paranoid
-        DocumentModuleMatcher.new(PARANOIA)
+        DocumentModuleMatcher.new PARANOIA
       end
 
       def be_versioned
-        DocumentModuleMatcher.new(VERSIONING)
+        DocumentModuleMatcher.new VERSIONING
       end
 
       def be_timestamped
-        DocumentModuleMatcher.new(TIMESTAMPS)
+        DocumentModuleMatcher.new TIMESTAMPS
       end
     end
   end

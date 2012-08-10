@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/mongoid-minitest/version', __FILE__)
+require File.expand_path '../lib/mongoid-minitest/version', __FILE__
 
 Gem::Specification.new do |gem|
   gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel']
@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/frodsan/mongoid-minitest'
 
   gem.files         = Dir.glob('{lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename f }
+  gem.test_files    = gem.files.grep %r{^(test|spec|features)/}
   gem.name          = 'mongoid-minitest'
   gem.require_paths = ['lib']
   gem.version       = Mongoid::MiniTest::VERSION

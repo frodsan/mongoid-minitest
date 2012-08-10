@@ -4,7 +4,7 @@ describe 'Validations' do
   describe Person do
     subject { Person }
 
-    it { must validate_presence_of(:name) }
+    it { must validate_presence_of :name  }
     it { must validate_presence_of(:role).with_message('no role') }
 
     it { must validate_uniqueness_of(:login).case_insensitive }
