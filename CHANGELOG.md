@@ -1,10 +1,12 @@
 ## 0.1.2 - unreleased
 
++ Use [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem
+  instead of our matchers implementation - *Francesco Rodriguez*.
 + Bump mongoid version to 3.0.3 - *Francesco Rodriguez*.
 
 ## 0.1.1 - August 09, 2012
 
-+ Remove required ruby version from the gemspec. Fixes [#9](https://github.com/frodsan/mongoid-minitest/pull/9).
++ Remove required ruby version from the gemspec. Fixes [#9](https://github.com/frodsan/mongoid-minitest/pull/9). *Francesco Rodriguez*
 
 ## 0.1.0 - August 09, 2012
 
