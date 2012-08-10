@@ -2,7 +2,7 @@
 require File.expand_path('../lib/mongoid-minitest/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ['Francesco Rodriguez']
+  gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel']
   gem.email         = ['lrodriguezsanc@gmail.com']
   gem.description   = %q{Minitest matchers for Mongoid}
   gem.summary       = %q{Minitest matchers for Mongoid}
