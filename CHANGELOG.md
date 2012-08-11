@@ -2,7 +2,7 @@
 
 + Use [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem
   instead of our matchers implementation - *Francesco Rodriguez*.
-+ Bump mongoid version to 3.0.3 - *Francesco Rodriguez*.
++ Bump mongoid version to 3.0.4 - *Francesco Rodriguez*.
 
 ## 0.1.1 - August 09, 2012
 
