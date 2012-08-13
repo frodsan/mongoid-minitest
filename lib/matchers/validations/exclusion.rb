@@ -7,14 +7,14 @@ module Mongoid
         end
 
         def to_not_allow(*values)
-          @not_allowed_values = values.flatten
+          @not_allowed_values = (values.length > 1) ? values.flatten : values[0]
           self
         end
 
         def matches?(subject)
           return false unless result = super(subject)
 
-          if @not_allowed_values
+          if Array === @not_allowed_values
             allowed_values = @not_allowed_values - @validator.options[:in].to_a
             if allowed_values.empty?
               @positive_message << ' not allowing all values mentioned'
@@ -23,14 +23,23 @@ module Mongoid
               @negative_message << " #{to_sentence(allowed_values)}"
               result = false
             end
+          elsif @not_allowed_values
+            if @not_allowed_values == @validator.options[:in]
+              @positive_message << " not allowing values in #{@not_allowed_values.inspect}"
+            else
+              @negative_message << " not allowing values in #{@validator.options[:in].inspect}"
+              result = false
+            end
           end
 
           result
         end
 
         def description
-          if @not_allowed_values
+          if Array === @not_allowed_values
             super << " not allowing the values: #{to_sentence(@not_allowed_values)}"
+          elsif @not_allowed_values
+            super << " not allowing the values in #{@not_allowed_values.inspect}"
           end
         end
       end
