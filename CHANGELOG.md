@@ -1,11 +1,11 @@
-## 0.1.2 - unreleased
+## 0.1.2 - August 13, 2012
 
-+ Allow passing in a Regex to the validate_format_of matcher. 
-	Pull Request [#12](https://github.com/frodsan/mongoid-minitest/pull/12) - *Godfrey Chan*.
-+ Allow non-array values for inclusion/exclusion matchers. 
-	Pull Request [#11](https://github.com/frodsan/mongoid-minitest/pull/11) - *Godfrey Chan*.
-+ Added as_inverse_of for association matchers. 
-	Pull Request [#10](https://frodsan/mongoid-minitest/pull/10) - *Godfrey Chan*.
++ Allow passing in a Regex to the validate_format_of matcher.
+  Pull Request [#12](https://github.com/frodsan/mongoid-minitest/pull/12) - *Godfrey Chan*.
++ Allow non-array values for inclusion/exclusion matchers.
+  Pull Request [#11](https://github.com/frodsan/mongoid-minitest/pull/11) - *Godfrey Chan*.
++ Added as_inverse_of for association matchers.
+  Pull Request [#10](https://frodsan/mongoid-minitest/pull/10) - *Godfrey Chan*.
 + Use [minitest-matchers](https://github.com/zenspider/minitest-matchers) gem
   instead of our matchers implementation - *Francesco Rodriguez*.
 + Bump mongoid version to 3.0.4 - *Francesco Rodriguez*.
