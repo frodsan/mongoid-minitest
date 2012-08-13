@@ -1,3 +1,5 @@
+## 0.1.3 - unreleased
+
 ## 0.1.2 - August 13, 2012
 
 + Allow passing in a Regex to the validate_format_of matcher.
