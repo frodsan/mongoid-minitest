@@ -23,6 +23,12 @@ module Mongoid
           self
         end
 
+        def as_inverse_of(inverse_of)
+          @association[:inverse_of] = inverse_of
+          @description << " as the inverse of #{@association[:inverse_of].inspect}"
+          self
+        end
+
         def matches?(subject)
           @klass    = class_of(subject)
           @metadata = @klass.relations[@association[:name]]
@@ -31,6 +37,7 @@ module Mongoid
           check_association_name
           check_association_type
           check_association_class if @association[:class]
+          check_association_inverse_of if @association[:inverse_of]
 
           @result
         end
@@ -77,6 +84,15 @@ module Mongoid
             @result = false
           else
             @positive_message << " of type #{@metadata.klass}" if @association[:class]
+          end
+        end
+
+        def check_association_inverse_of
+          if @association[:inverse_of] != @metadata.inverse_of
+            @negative_message = "..."
+            @result = false
+          else
+            @positive_message << " as inverse of #{@metadata.inverse_of}" if @association[:inverse_of]
           end
         end
 
