@@ -37,6 +37,8 @@ class Person
 
   validates_inclusion_of :role, in: ['admin', 'user']
   validates_exclusion_of :email, in: ['foo@bar.com', 'fizz@buzz.com']
+  validates_inclusion_of :age, in: 0..200
+  validates_exclusion_of :age, in: 30..60
 end
 
 class Pet
