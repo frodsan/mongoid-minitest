@@ -15,7 +15,7 @@ class Person
   index({ name: 1 }, { name: 'name' })
 
   has_one :account
-  has_many :pets
+  has_many :pets, inverse_of: :owner
   has_and_belongs_to_many :friends, class_name: 'Person'
 
   embeds_one :profile
@@ -42,7 +42,7 @@ end
 class Pet
   include Mongoid::Document
 
-  belongs_to :person, index: :true
+  belongs_to :owner, class_name: 'Person', index: :true
 end
 
 class Account
