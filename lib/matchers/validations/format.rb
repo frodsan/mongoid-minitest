@@ -35,7 +35,7 @@ module Mongoid
         private
 
         def check_valid_value
-          if format =~ @valid
+          if format == @valid || format =~ @valid
             @positive_message << " with #{@valid.inspect} as a valid value"
           else
             @negative_message << " with #{@valid.inspect} as an invalid value"
@@ -44,7 +44,7 @@ module Mongoid
         end
 
         def check_invalid_value
-          if !(format =~ @invalid)
+          if format !~ @invalid
             @positive_message << " with #{@invalid.inspect} as a invalid value"
           else
             @negative_message << " with #{@invalid.inspect} as a valid value"
