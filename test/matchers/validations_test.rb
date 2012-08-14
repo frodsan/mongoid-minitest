@@ -4,8 +4,8 @@ describe 'Validations' do
   describe Person do
     subject { Person }
 
-    it { must validate_presence_of :name  }
-    it { must validate_presence_of(:role).with_message('no role') }
+    it { must validate_presence_of(:name).on(:save) }
+    it { must validate_presence_of(:role).with_message('no role').on(nil) }
 
     it { must validate_uniqueness_of(:login).case_insensitive }
     it { must validate_uniqueness_of(:login).scoped_to(:site) }
@@ -28,8 +28,8 @@ describe 'Validations' do
     it { must validate_inclusion_of(:age).to_allow(0..200) }
     it { must validate_exclusion_of(:age).to_not_allow(30..60) }
 
-    it { must validate_confirmation_of(:password) }
-    it { must validate_acceptance_of(:terms_of_use).accept_with('1') }
+    it { must validate_confirmation_of(:password).on(:create) }
+    it { must validate_acceptance_of(:terms_of_use).accept_with('1').on(:create, :update) }
 
     it { must validate_associated(:pets) }
   end
