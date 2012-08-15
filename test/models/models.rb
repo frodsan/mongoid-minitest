@@ -24,8 +24,8 @@ class Person
   validates_presence_of :name
   validates_presence_of :role, message: 'no role'
 
-  validates_confirmation_of :password
-  validates_acceptance_of :terms_of_use
+  validates_confirmation_of :password, on: :create
+  validates_acceptance_of :terms_of_use, on: [:create, :update]
 
   validates_uniqueness_of :email
   validates_uniqueness_of :login, scope: :site, case_sensitive: false

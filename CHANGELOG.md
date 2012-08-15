@@ -1,5 +1,8 @@
 ## 0.1.3 - unreleased
 
++ Added on option for validation matchers.
+  Pull Request [#14](https://github.com/frodsan/mongoid-minitest/pull/14) - *Godfrey Chan*.
+
 ## 0.1.2 - August 13, 2012
 
 + Allow passing in a Regex to the validate_format_of matcher.

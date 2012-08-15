@@ -12,6 +12,11 @@ module Mongoid
           self
         end
 
+        def on(*contexts)
+          @expected_on = clean_contexts(contexts)
+          self
+        end
+
         def matches?(subject)
           @klass     = class_of(subject)
           @validator = detect_validator
@@ -19,6 +24,7 @@ module Mongoid
 
           check_validator
           check_message if @expected_message
+          check_on if @expected_on
 
           @result
         end
@@ -34,18 +40,24 @@ module Mongoid
         def description
           desc = "validate #{@type.inspect} of #{@field.inspect}"
           desc << " with message: #{@expected_message.inspect}" if @expected_message
+          desc << " on #{@expected_on.empty? ? 'all actions' : to_sentence(@expected_on)}" if @expected_on
 
           desc
         end
 
         private
 
+        # Make sure contexts is always an array + normalize AR 2.x and AR 3.x differences
+        def clean_contexts(contexts)
+          [contexts].flatten.reject{|ctx| ctx == :save}.compact
+        end
+
         def check_validator
           if @validator
-            @negative_message = "#{@type.inspect} validator on #{@field.inspect}"
-            @positive_message = "#{@type.inspect} validator on #{@field.inspect}"
+            @negative_message = "#{@type.inspect} validator for #{@field.inspect}"
+            @positive_message = "#{@type.inspect} validator for #{@field.inspect}"
           else
-            @negative_message = "no #{@type.inspect} validator on #{@field.inspect}"
+            @negative_message = "no #{@type.inspect} validator for #{@field.inspect}"
             @result = false
           end
         end
@@ -56,6 +68,16 @@ module Mongoid
             @positive_message << " with message: #{error_message.inspect}"
           else
             @negative_message << " with message: #{error_message.inspect}"
+            @result = false
+          end
+        end
+
+        def check_on
+          on = clean_contexts(@validator.options[:on])
+          if on.sort == @expected_on.sort
+            @positive_message << " on #{on.empty? ? 'all actions' : to_sentence(on)}"
+          else
+            @negative_message << " on #{on.empty? ? 'all actions' : to_sentence(on)}"
             @result = false
           end
         end
