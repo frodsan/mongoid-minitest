@@ -181,8 +181,9 @@ To run unit tests, run `bundle exec rake`.
 
 ## Maintainers
 
-* Francesco Rodriguez (<https://github.com/frodsan/>).
-* Sascha Wessel (<https://github.com/gr4y>).
+* Francesco Rodriguez (https://github.com/frodsan/).
+* Sascha Wessel (https://github.com/gr4y).
+* Godfrey Chan (https://github.com/chancancode).
 
 ## License
 
