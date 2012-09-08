@@ -10,7 +10,7 @@ This gem supports:
 
 * Ruby 1.9.3
 * Mongoid ~>3.0.4
-* MiniTest ~>3.3.0
+* MiniTest ~>3.4.0
 
 If you're using Mongoid 2.4.x, you should use [0.0.3.1 version](https://github.com/frodsan/mongoid-minitest/tree/274976e8814cc9bfb3f1c83eba1bed21fa3cf26b).
 

@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Mongoid::MiniTest::VERSION
 
-  gem.add_dependency 'minitest', '~> 3.3.0'
+  gem.add_dependency 'minitest', '~> 3.4.0'
   gem.add_dependency 'minitest-matchers', '~> 1.2.0'
   gem.add_dependency 'mongoid' , '~> 3.0.4'
   gem.add_development_dependency 'rake'
