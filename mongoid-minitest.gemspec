@@ -2,7 +2,7 @@
 require File.expand_path '../lib/mongoid-minitest/version', __FILE__
 
 Gem::Specification.new do |gem|
-  gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel']
+  gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel', 'Godfrey Chan']
   gem.email         = ['lrodriguezsanc@gmail.com']
   gem.description   = %q{Minitest matchers for Mongoid}
   gem.summary       = %q{Minitest matchers for Mongoid}
@@ -17,6 +17,6 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'minitest', '~> 3.4.0'
   gem.add_dependency 'minitest-matchers', '~> 1.2.0'
-  gem.add_dependency 'mongoid' , '~> 3.0.4'
+  gem.add_dependency 'mongoid' , '~> 3.0.5'
   gem.add_development_dependency 'rake'
 end

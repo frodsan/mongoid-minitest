@@ -1,5 +1,6 @@
 ## 0.1.3 - unreleased
 
++ Bump mongoid version to 3.0.5 - *Francesco Rodriguez*.
 + Bump minitest version to 3.4.0 - *Francesco Rodriguez*.
 + Added on option for validation matchers.
   Pull Request [#14](https://github.com/frodsan/mongoid-minitest/pull/14) - *Godfrey Chan*.
