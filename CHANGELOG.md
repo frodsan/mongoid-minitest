@@ -1,4 +1,4 @@
-## 0.1.3 - unreleased
+## 0.1.3 - September 8, 2012
 
 + Bump mongoid version to 3.0.5 - *Francesco Rodriguez*.
 + Bump minitest version to 3.4.0 - *Francesco Rodriguez*.
