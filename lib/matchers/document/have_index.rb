@@ -9,7 +9,7 @@ module Mongoid
         @klass = class_of(subject)
 
         @klass.index_options.each do |key, options|
-          unless key[@field.to_sym] || key["#{@field}_id"]
+          unless key[@field.to_sym] || key[:"#{@field}_id"]
             @error = "no index for #{@field.inspect}"
 
             return false
