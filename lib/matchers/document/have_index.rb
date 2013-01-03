@@ -1,20 +1,19 @@
 module Mongoid
   module Matchers
     class HaveIndexMatcher < Matcher
-      def initialize(field)
-        @field = field.to_s
+      def initialize(*fields)
+        @fields = fields.map(&:to_sym)
       end
 
       def matches?(subject)
         @klass = class_of(subject)
-
         @klass.index_options.any? do |index, options|
-          index[@field.to_sym]
+          index.keys == @fields
         end
       end
 
       def failure_message
-        "#{@klass} to #{description}, got no index for #{@field.inspect}"
+        "#{@klass} to #{description}, got no index for #{@fields.inspect}"
       end
 
       def negative_failure_message
@@ -22,12 +21,12 @@ module Mongoid
       end
 
       def description
-        "have an index for #{@field.inspect}"
+        "have an index for #{@fields.inspect}"
       end
     end
 
-    def have_index_for(field)
-      HaveIndexMatcher.new(field)
+    def have_index_for(*fields)
+      HaveIndexMatcher.new(*fields)
     end
   end
 end
