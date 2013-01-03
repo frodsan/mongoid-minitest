@@ -20,6 +20,6 @@ describe 'Document' do
   describe Pet do
     subject { Pet }
 
-    it { must have_index_for(:owner) }
+    it { must have_index_for(:owner_id) }
   end
 end

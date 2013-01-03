@@ -8,19 +8,13 @@ module Mongoid
       def matches?(subject)
         @klass = class_of(subject)
 
-        @klass.index_options.each do |key, options|
-          unless key[@field.to_sym] || key[:"#{@field}_id"]
-            @error = "no index for #{@field.inspect}"
-
-            return false
-          end
+        @klass.index_options.any? do |index, options|
+          index[@field.to_sym]
         end
-
-        true
       end
 
       def failure_message
-        "#{@klass} to #{description}, got #{@error}"
+        "#{@klass} to #{description}, got no index for #{@field.inspect}"
       end
 
       def negative_failure_message
