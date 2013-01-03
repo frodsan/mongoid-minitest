@@ -104,6 +104,7 @@ See the following examples:
       it { must have_fields(:name, :login).of_type(String).with_default_value("me") }
 
       it { must have_index_for(:name) }
+      it { must have_index_for(:account_id, :email) }
     end
 
 ### Validation Matchers
