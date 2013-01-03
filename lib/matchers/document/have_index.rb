@@ -13,15 +13,19 @@ module Mongoid
       end
 
       def failure_message
-        "#{@klass} to #{description}, got no index for #{@fields.inspect}"
+        "#{@klass} to #{description}, but only found indexes #{indexes.inspect}"
       end
 
       def negative_failure_message
-        "#{@klass} to not #{description}, got #{@klass} to #{description}"
+        "#{@klass} to not #{description}, but found an index for #{@fields.inspect}"
       end
 
       def description
         "have an index for #{@fields.inspect}"
+      end
+
+      def indexes
+        @klass.index_options.keys.map(&:keys)
       end
     end
 
