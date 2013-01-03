@@ -13,6 +13,7 @@ class Person
   field :site,     type: String
 
   index({ name: 1 }, { name: 'name' })
+  index({ email: 1, login: 1 })
 
   has_one :account
   has_many :pets, inverse_of: :owner
