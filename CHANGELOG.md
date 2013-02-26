@@ -1,3 +1,14 @@
+## 0.1.5 - February 26, 2013
+
++ Add Ruby 2.0.0 support - *Francesco Rodriguez*.
++ Make mongoid version more flexible in gemspec.
+  Pull Request [#16](https://github.com/frodsan/mongoid-minitest/pull/16) - *Ryan McGeary*.
++ Add compound indexes support for `have_index` matcher.
+  Pull Request [#15](https://github.com/frodsan/mongoid-minitest/pull/15) - *Ryan McGeary*.
++ Remove support for automatically appending `_id` to fields passed to
+  `have_index` matcher. See <https://github.com/frodsan/mongoid-minitest/pull/15#issuecomment-11851098>
+  form more information - *Ryan McGeary*.
+
 ## 0.1.4 - October 10, 2012
 
 + Bump mongoid version to 3.0.6 - *Francesco Rodriguez*.
