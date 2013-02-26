@@ -9,8 +9,8 @@ MiniTest matchers for Mongoid.
 This gem supports:
 
 * Ruby 1.9.3
-* Mongoid ~>3.0.4
-* MiniTest ~>3.4.0
+* Mongoid ~>3.0
+* MiniTest ~>4.1
 
 If you're using Mongoid 2.4.x, you should use [0.0.3.1 version](https://github.com/frodsan/mongoid-minitest/tree/274976e8814cc9bfb3f1c83eba1bed21fa3cf26b).
 
@@ -33,7 +33,7 @@ Or install it yourself as:
 Matchers are available at `Mongoid::Matchers` module.
 Setup matchers according to your testing preference:
 
-### minitest/unit
+### minitest/unit
 
     class MiniTest::Unit::TestCase
       include Mongoid::Matchers
