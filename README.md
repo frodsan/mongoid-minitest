@@ -18,7 +18,7 @@ If you're using Mongoid 2.4.x, you should use [0.0.3.1 version](https://github.c
 
 Add this line to your application's Gemfile:
 
-    gem "mongoid-minitest"
+    gem 'mongoid-minitest'
 
 And then execute:
 
@@ -65,7 +65,7 @@ See the following examples:
 
     # minitest/spec with subject
     describe Dummy
-      it { must have_field(:name) }
+      it { must have_field(:name) }
       it { wont have_field(:none) }
     end
 
@@ -86,7 +86,7 @@ See the following examples:
     describe Mongoid::Matchers::Document do
       subject { Person }
 
-      it { must be_document }    # if model includes Mongoid::Document
+      it { must be_document }    # if model includes Mongoid::Document
       it { must be_paranoid }    # if model includes Mongoid::Paranoia
       it { must be_versioned }   # if model includes Mongoid::Versioning
       it { must be_timestamped } # if model includes Mongoid::Timestamps
@@ -115,10 +115,10 @@ See the following examples:
       it { must validate_presence_of(:name) }
 
       it { must validate_uniqueness_of(:login).case_insensitive }
-      it { must validate_uniqueness_of(:login).scoped_to(:site) }
+      it { must validate_uniqueness_of(:login).scoped_to(:site) }
 
-      it { must validate_length_of(:login).in(5..12) }
-      it { must validate_length_of(:login).within(5..12) }
+      it { must validate_length_of(:login).in(5..12) }
+      it { must validate_length_of(:login).within(5..12) }
 
       it { must validate_length_of(:password).with_min(8) }
       it { must validate_length_of(:password).with_minimum(8) }
@@ -126,9 +126,9 @@ See the following examples:
       it { must validate_length_of(:password).with_maximum(16) }
 
       it { must validate_format_of(:email).to_allow("foo@bar.com") }
-      it { must validate_format_of(:email).to_not_allow("foo_bar_com") }
+      it { must validate_format_of(:email).to_not_allow("foo_bar_com") }
 
-      it { must validate_inclusion_of(:role).to_allow("user", "admin") }
+      it { must validate_inclusion_of(:role).to_allow("user", "admin") }
       it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
 
       it { must validate_confirmation_of(:password) }
@@ -137,7 +137,7 @@ See the following examples:
       it { must validate_associated(:pets) }
 
       # Testing validators custom messages
-      it { must validate_presence_of(:role).with_message("no role") }
+      it { must validate_presence_of(:role).with_message("no role") }
       it { must validate_length_of(:password).with_min(8).with_message("len >= 8") }
     end
 
@@ -149,7 +149,7 @@ See the following examples:
 
         it { must have_one(:account) }
         it { must have_many(:pets).of_type(Pet) }
-        it { must have_and_belong_to_many(:friends) }
+        it { must have_and_belong_to_many(:friends) }
 
         it { must embed_one(:profile) }
         it { must embed_many(:sites) }
@@ -158,11 +158,11 @@ See the following examples:
       describe Pet do
         subject { Pet }
 
-        it { must belong_to(:person) }
+        it { must belong_to(:person) }
       end
 
       describe Site do
-        subject { Site }
+        subject { Site }
 
         it { must embedded_in(:person) }
       end
