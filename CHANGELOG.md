@@ -7,7 +7,7 @@
   Pull Request [#15](https://github.com/frodsan/mongoid-minitest/pull/15) - *Ryan McGeary*.
 + Remove support for automatically appending `_id` to fields passed to
   `have_index` matcher. See <https://github.com/frodsan/mongoid-minitest/pull/15#issuecomment-11851098>
-  form more information - *Ryan McGeary*.
+  for more information - *Ryan McGeary*.
 
 ## 0.1.4 - October 10, 2012
 
