@@ -8,7 +8,7 @@ MiniTest matchers for Mongoid.
 
 This gem supports:
 
-* Ruby 1.9.3
+* Ruby 1.9.3, 2.0.0
 * Mongoid ~>3.0
 * MiniTest ~>4.1
 
