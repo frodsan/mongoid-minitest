@@ -4,6 +4,7 @@ module Mongoid
       class ValidateLengthMatcher < HaveValidationMatcher
         def initialize(field)
           super(field, :length)
+          @minimum =  @maximum = @within = nil
         end
 
         def with_minimum(value)

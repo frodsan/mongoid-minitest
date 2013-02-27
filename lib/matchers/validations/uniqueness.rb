@@ -4,6 +4,7 @@ module Mongoid
       class ValidateUniquenessMatcher < HaveValidationMatcher
         def initialize(field)
           super(field, :uniqueness)
+          @case_insensitive = @scope = nil
         end
 
         def case_insensitive
