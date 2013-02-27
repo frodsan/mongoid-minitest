@@ -1,7 +1,6 @@
 require 'test_helper'
 
 describe "Associations" do
-
   describe Person do
     subject { Person }
 
@@ -30,5 +29,4 @@ describe "Associations" do
 
     it { must embedded_in(:person) }
   end
-
 end

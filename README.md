@@ -39,7 +39,6 @@ Usage
 Require `mongoid-minitest` in your `test_helper.rb` or
 `spec_helper.rb` file:
 
-    gem 'minitest'
     require 'minitest/autorun'
     require 'mongoid'
     require 'mongoid-minitest'
@@ -91,10 +90,13 @@ Matchers
     Module Mongoid
       Module Matchers
         include Document
-        include Validations
         include Associations
+        include MiniTest::Matchers::ActiveModel
       end
     end
+
+*NOTE:* [minitest-activemodel](https://github.com/frodsan/minitest-activemodel)
+gem is a dependency of this gem.
 
 ### Document Matchers
 
@@ -120,40 +122,6 @@ Matchers
 
       it { must have_index_for(:name) }
       it { must have_index_for(:account_id, :email) }
-    end
-
-### Validation Matchers
-
-    describe Mongoid::Matchers::Validations do
-      subject { Person }
-
-      it { must validate_presence_of(:name) }
-
-      it { must validate_uniqueness_of(:login).case_insensitive }
-      it { must validate_uniqueness_of(:login).scoped_to(:site) }
-
-      it { must validate_length_of(:login).in(5..12) }
-      it { must validate_length_of(:login).within(5..12) }
-
-      it { must validate_length_of(:password).with_min(8) }
-      it { must validate_length_of(:password).with_minimum(8) }
-      it { must validate_length_of(:password).with_max(16) }
-      it { must validate_length_of(:password).with_maximum(16) }
-
-      it { must validate_format_of(:email).to_allow("foo@bar.com") }
-      it { must validate_format_of(:email).to_not_allow("foo_bar_com") }
-
-      it { must validate_inclusion_of(:role).to_allow("user", "admin") }
-      it { must validate_exclusion_of(:email).to_not_allow("foo@bar.com", "fizz@buzz.com") }
-
-      it { must validate_confirmation_of(:password) }
-      it { must validate_acceptance_of(:terms_of_use).accept_with("1") }
-
-      it { must validate_associated(:pets) }
-
-      # Testing validators custom messages
-      it { must validate_presence_of(:role).with_message("no role") }
-      it { must validate_length_of(:password).with_min(8).with_message("len >= 8") }
     end
 
 ### Association Matchers
@@ -182,6 +150,11 @@ Matchers
         it { must embedded_in(:person) }
       end
     end
+
+### Validation Matchers
+
+Check [minitest-activemodel](https://github.com/frodsan/minitest-activemodel)
+gem for more information.
 
 Contributing
 ------------
