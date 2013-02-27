@@ -2,18 +2,22 @@
 require File.expand_path '../lib/mongoid-minitest/version', __FILE__
 
 Gem::Specification.new do |gem|
+  gem.name          = 'mongoid-minitest'
+  gem.version       = Mongoid::MiniTest::VERSION
+
   gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel', 'Godfrey Chan']
   gem.email         = ['lrodriguezsanc@gmail.com']
   gem.description   = %q{MiniTest matchers for Mongoid}
-  gem.summary       = %q{MiniTest matchers for Mongoid}
+  gem.summary       = gem.description
   gem.homepage      = 'https://github.com/frodsan/mongoid-minitest'
+  gem.licenses      = ['MIT']
 
-  gem.files         = Dir.glob('{lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename f }
-  gem.test_files    = gem.files.grep %r{^(test|spec|features)/}
-  gem.name          = 'mongoid-minitest'
-  gem.require_paths = ['lib']
-  gem.version       = Mongoid::MiniTest::VERSION
+  gem.files            = `git ls-files`.split "\n"
+  gem.executables      = `git ls-files -- bin/*`.split("\n").map{|f| File.basename f }
+  gem.test_files       = `git ls-files -- test/*`.split "\n"
+  gem.extra_rdoc_files = ['CHANGELOG.md', 'LICENSE.md', 'README.md']
+  gem.rdoc_options     = ['--charset=UTF-8']
+  gem.require_paths    = ['lib']
 
   gem.add_dependency 'minitest', '~> 4.1'
   gem.add_dependency 'minitest-matchers', '~> 1.2'
