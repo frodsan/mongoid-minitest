@@ -2,34 +2,34 @@ module Mongoid
   module Matchers
     module Document
       class HaveFieldMatcher < Matcher
-        def initialize(*fields)
+        def initialize *fields
           @fields = fields.collect(&:to_s)
         end
 
-        def of_type(type)
+        def of_type type
           @type = type
           self
         end
 
-        def with_default_value(default)
+        def with_default_value default
           @default = default
           self
         end
 
-        def matches?(subject)
-          @klass  = class_of(subject)
+        def matches? subject
+          @klass  = class_of subject
           @errors = []
 
           @fields.each do |field|
-            if @klass.fields.include?(field)
-              error = ""
+            if @klass.fields.include? field
+              error = ''
               result_field = @klass.fields[field]
 
-              if check_type_with(result_field.type)
+              if check_type_with result_field.type
                 error << " of type #{result_field.type.inspect}"
               end
 
-              if check_default_with(result_field.default_val)
+              if check_default_with result_field.default_val
                 error << " with default value of #{result_field.default_val.inspect}"
               end
 
@@ -61,20 +61,19 @@ module Mongoid
 
         private
 
-        def check_type_with(type)
+        def check_type_with type
           @type && type != @type
         end
 
-        def check_default_with(default)
+        def check_default_with default
           !@default.nil? && !default.nil? && default != @default
         end
       end
 
-      def have_field(*fields)
+      def have_field *fields
         HaveFieldMatcher.new(*fields)
       end
       alias :have_fields :have_field
-
     end
   end
 end

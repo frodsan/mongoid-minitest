@@ -1,11 +1,11 @@
 module Mongoid
   module Matchers
     class BeStoredInMatcher < Matcher
-      def initialize(collection_name)
+      def initialize collection_name
         @collection_name = collection_name.to_s
       end
 
-      def matches?(subject)
+      def matches? subject
         class_of(subject).collection_name.to_s == @collection_name
       end
 
@@ -14,8 +14,8 @@ module Mongoid
       end
     end
 
-    def be_stored_in(collection_name)
-      BeStoredInMatcher.new(collection_name)
+    def be_stored_in collection_name
+      BeStoredInMatcher.new collection_name
     end
   end
 end

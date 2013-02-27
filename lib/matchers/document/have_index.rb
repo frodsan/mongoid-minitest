@@ -1,12 +1,12 @@
 module Mongoid
   module Matchers
     class HaveIndexMatcher < Matcher
-      def initialize(*fields)
+      def initialize *fields
         @fields = fields.map(&:to_sym)
       end
 
-      def matches?(subject)
-        @klass = class_of(subject)
+      def matches? subject
+        @klass = class_of subject
         @klass.index_options.any? do |index, options|
           index.keys == @fields
         end
@@ -29,7 +29,7 @@ module Mongoid
       end
     end
 
-    def have_index_for(*fields)
+    def have_index_for *fields
       HaveIndexMatcher.new(*fields)
     end
   end

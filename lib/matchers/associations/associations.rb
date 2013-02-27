@@ -10,27 +10,27 @@ module Mongoid
       EMBEDDED_IN = Mongoid::Relations::Embedded::In
 
       class HaveAssociationMatcher < Matcher
-        def initialize(name, type)
+        def initialize name, type
           @association = {}
           @association[:name] = name.to_s
           @association[:type] = type
           @description = "#{type_description} #{@association[:name].inspect}"
         end
 
-        def of_type(klass)
+        def of_type klass
           @association[:class] = klass
           @description << " of type #{@association[:class].inspect}"
           self
         end
 
-        def as_inverse_of(inverse_of)
+        def as_inverse_of inverse_of
           @association[:inverse_of] = inverse_of
           @description << " as the inverse of #{@association[:inverse_of].inspect}"
           self
         end
 
-        def matches?(subject)
-          @klass    = class_of(subject)
+        def matches? subject
+          @klass    = class_of subject
           @metadata = @klass.relations[@association[:name]]
           @result   = true
 
@@ -96,7 +96,7 @@ module Mongoid
           end
         end
 
-        def type_description(type = nil, passive = true)
+        def type_description type = nil, passive = true
           type ||= @association[:type]
           case type.name
           when HAS_ONE.name
@@ -119,32 +119,32 @@ module Mongoid
         end
       end
 
-      def have_one(association_name)
-        HaveAssociationMatcher.new(association_name, HAS_ONE)
+      def have_one association_name
+        HaveAssociationMatcher.new association_name, HAS_ONE
       end
 
-      def have_many(association_name)
-        HaveAssociationMatcher.new(association_name, HAS_MANY)
+      def have_many association_name
+        HaveAssociationMatcher.new association_name, HAS_MANY
       end
 
-      def have_and_belong_to_many(association_name)
-        HaveAssociationMatcher.new(association_name, HAS_AND_BELONGS_TO_MANY)
+      def have_and_belong_to_many association_name
+        HaveAssociationMatcher.new association_name, HAS_AND_BELONGS_TO_MANY
       end
 
-      def belong_to(association_name)
-        HaveAssociationMatcher.new(association_name, BELONGS_TO)
+      def belong_to association_name
+        HaveAssociationMatcher.new association_name, BELONGS_TO
       end
 
-      def embed_one(association_name)
-        HaveAssociationMatcher.new(association_name, EMBEDS_ONE)
+      def embed_one association_name
+        HaveAssociationMatcher.new association_name, EMBEDS_ONE
       end
 
-      def embed_many(association_name)
-        HaveAssociationMatcher.new(association_name, EMBEDS_MANY)
+      def embed_many association_name
+        HaveAssociationMatcher.new association_name, EMBEDS_MANY
       end
 
-      def embedded_in(association_name)
-        HaveAssociationMatcher.new(association_name, EMBEDDED_IN)
+      def embedded_in association_name
+        HaveAssociationMatcher.new association_name, EMBEDDED_IN
       end
     end
   end
