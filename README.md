@@ -23,7 +23,7 @@ Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'mongoid-minitest'
+    gem 'mongoid-minitest', group: :test
 
 And then execute:
 
