@@ -1,4 +1,4 @@
-## 1.0.0 - unreleased
+## 1.0.0 - February 27, 2013
 
 + Extract Validation Matchers to [minitest-activemodel](https://github.com/frodsan/minitest-activemodel) gem.
 
