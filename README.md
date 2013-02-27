@@ -1,10 +1,12 @@
-# mongoid-minitest
+mongoid-minitest
+================
 
 MiniTest matchers for Mongoid.
 
 [![Build Status](https://secure.travis-ci.org/frodsan/mongoid-minitest.png?branch=master&.png)](http://travis-ci.org/frodsan/mongoid-minitest)
 
-## Support
+Support
+-------
 
 This gem supports:
 
@@ -14,7 +16,8 @@ This gem supports:
 
 If you're using Mongoid 2.4.x, you should use [0.0.3.1 version](https://github.com/frodsan/mongoid-minitest/tree/274976e8814cc9bfb3f1c83eba1bed21fa3cf26b).
 
-## Installation
+Installation
+------------
 
 Add this line to your application's Gemfile:
 
@@ -28,7 +31,8 @@ Or install it yourself as:
 
     $ gem install mongoid-minitest
 
-## Usage
+Usage
+-----
 
 Matchers are available at `Mongoid::Matchers` module.
 Setup matchers according to your testing preference:
@@ -69,7 +73,8 @@ See the following examples:
       it { wont have_field(:none) }
     end
 
-## Matchers
+Matchers
+--------
 
 `Mongoid::Matchers` include the following modules:
 
@@ -91,7 +96,7 @@ See the following examples:
       it { must be_versioned }   # if model includes Mongoid::Versioning
       it { must be_timestamped } # if model includes Mongoid::Timestamps
 
-      it { must be_stored_in(:people) } # checks the collection for model's document
+      it { must be_stored_in(:people) } # checks the collection for model's document
 
       it { must have_field(:name) }
       it { must have_field(:name).of_type(String) }
@@ -168,7 +173,8 @@ See the following examples:
       end
     end
 
-## Contributing
+Contributing
+------------
 
 1. Fork it.
 2. Create your feature branch (`git checkout -b my-new-feature`).
@@ -176,17 +182,20 @@ See the following examples:
 4. Push to the branch (`git push origin my-new-feature`).
 5. Create new Pull Request.
 
-## Unit Tests
+Unit Tests
+----------
 
-To run unit tests, run `bundle exec rake`.
+To run unit tests, run `rake test`.
 
-## Maintainers
+Maintainers
+-----------
 
 * Francesco Rodriguez (https://github.com/frodsan/).
 * Sascha Wessel (https://github.com/gr4y).
 * Godfrey Chan (https://github.com/chancancode).
 
-## License
+License
+-------
 
 MIT License. Copyright 2012 Francesco Rodriguez. See [LICENSE](https://github.com/frodsan/lego/blob/master/LICENSE)
 for more information.
