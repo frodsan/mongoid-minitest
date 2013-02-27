@@ -1,3 +1,8 @@
+## unreleased
+
++ Remove instance variable warnings.
+  Pull Request [#17](https://github.com/frodsan/mongoid-minitest/pull/17) - *Ryan McGeary*.
+
 ## 0.1.5 - February 26, 2013
 
 + Add Ruby 2.0.0 support - *Francesco Rodriguez*.
