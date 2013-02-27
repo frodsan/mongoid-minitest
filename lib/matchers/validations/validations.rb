@@ -5,6 +5,7 @@ module Mongoid
         def initialize(field, validation_type)
           @field = field.to_s
           @type = validation_type.to_s
+          @expected_message = @expected_on = nil
         end
 
         def with_message(expected_message)

@@ -4,6 +4,7 @@ module Mongoid
       class ValidateFormatMatcher < HaveValidationMatcher
         def initialize field
           super field, :format
+          @valid = @invalid = nil
         end
 
         def to_allow valid_value
