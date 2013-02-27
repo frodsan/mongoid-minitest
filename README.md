@@ -95,7 +95,7 @@ Matchers
       end
     end
 
-*NOTE:* [minitest-activemodel](https://github.com/frodsan/minitest-activemodel)
+**NOTE:** [minitest-activemodel](https://github.com/frodsan/minitest-activemodel)
 gem is a dependency of this gem.
 
 ### Document Matchers
