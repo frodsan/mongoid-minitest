@@ -1,4 +1,4 @@
-## unreleased
+## 1.0.0 - unreleased
 
 + Remove instance variable warnings.
   Pull Request [#17](https://github.com/frodsan/mongoid-minitest/pull/17) - *Ryan McGeary*.
