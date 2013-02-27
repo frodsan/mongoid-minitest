@@ -4,8 +4,8 @@ require File.expand_path '../lib/mongoid-minitest/version', __FILE__
 Gem::Specification.new do |gem|
   gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel', 'Godfrey Chan']
   gem.email         = ['lrodriguezsanc@gmail.com']
-  gem.description   = %q{Minitest matchers for Mongoid}
-  gem.summary       = %q{Minitest matchers for Mongoid}
+  gem.description   = %q{MiniTest matchers for Mongoid}
+  gem.summary       = %q{MiniTest matchers for Mongoid}
   gem.homepage      = 'https://github.com/frodsan/mongoid-minitest'
 
   gem.files         = Dir.glob('{lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
