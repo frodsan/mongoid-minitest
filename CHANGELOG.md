@@ -1,5 +1,6 @@
 ## 1.0.0 - unreleased
 
++ Add support for JRuby 1.9 mode - *Francesco Rodriguez*.
 + Add support for Ruby 2.0.0, ruby-head and rbx-19mode - *Francesco Rodriguez*.
 + Add support for Mongoid 4 edge - *Francesco Rodriguez*.
 + Remove instance variable warnings.
