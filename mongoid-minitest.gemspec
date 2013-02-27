@@ -4,8 +4,8 @@ Gem::Specification.new do |gem|
   gem.name          = 'mongoid-minitest'
   gem.version       = '1.0.0'
 
-  gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel', 'Godfrey Chan']
-  gem.email         = ['lrodriguezsanc@gmail.com']
+  gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel', 'Godfrey Chan', 'Ryan McGeary']
+  gem.email         = ['lrodriguezsanc@gmail.com', 'ryan@mcgeary.org']
   gem.description   = %q{MiniTest matchers for Mongoid}
   gem.summary       = gem.description
   gem.homepage      = 'https://github.com/frodsan/mongoid-minitest'

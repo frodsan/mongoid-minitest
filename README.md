@@ -203,6 +203,7 @@ Maintainers
 * Francesco Rodriguez (https://github.com/frodsan/).
 * Sascha Wessel (https://github.com/gr4y).
 * Godfrey Chan (https://github.com/chancancode).
+* Ryan McGeary (https://github.com/rmm5t).
 
 License
 -------
