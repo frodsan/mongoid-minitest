@@ -19,6 +19,8 @@ Gem::Specification.new do |gem|
   gem.rdoc_options     = ['--charset=UTF-8']
   gem.require_paths    = ['lib']
 
+  gem.required_ruby_version = '>= 1.9.3'
+
   gem.add_dependency 'minitest', '~> 4.1'
   gem.add_dependency 'minitest-matchers', '~> 1.2'
   gem.add_dependency 'mongoid' , '>= 3'
