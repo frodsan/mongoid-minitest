@@ -1,8 +1,10 @@
 class Person
   include Mongoid::Document
-  include Mongoid::Paranoia
-  include Mongoid::Versioning
   include Mongoid::Timestamps
+  unless Mongoid::VERSION == '4.0.0'
+    include Mongoid::Paranoia
+    include Mongoid::Versioning
+  end
 
   field :login,    type: String,  default: 'me'
   field :password, type: String
@@ -34,7 +36,7 @@ class Person
   validates_length_of :password, minimum: 8, maximum: 16
   validates_length_of :login, in: 5..12
 
-  validates_format_of :email, with: /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/
 
   validates_inclusion_of :role, in: ['admin', 'user']
   validates_exclusion_of :email, in: ['foo@bar.com', 'fizz@buzz.com']

@@ -19,7 +19,7 @@ describe 'Validations' do
     it { must validate_length_of(:password).with_max(16) }
     it { must validate_length_of(:password).with_maximum(16) }
 
-    it { must validate_format_of(:email).to_allow(/^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i) }
+    it { must validate_format_of(:email).to_allow(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/) }
     it { must validate_format_of(:email).to_allow('foo@bar.com') }
     it { must validate_format_of(:email).to_not_allow('foo_bar_com') }
 

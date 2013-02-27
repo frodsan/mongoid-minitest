@@ -5,9 +5,11 @@ describe 'Document' do
     subject { Person }
 
     it { must be_document }
-    it { must be_paranoid }
-    it { must be_versioned }
     it { must be_timestamped }
+    unless Mongoid::VERSION == '4.0.0'
+      it { must be_paranoid }
+      it { must be_versioned }
+    end
 
     it { must be_stored_in(:people) }
 
