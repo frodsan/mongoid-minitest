@@ -1,6 +1,7 @@
 require 'bundler/setup'
 gem 'minitest'
 require 'minitest/autorun'
+require 'mongoid'
 require 'mongoid-minitest'
 
 Dir[File.dirname(__FILE__) + '/models/*.rb'].each { |f| require f }

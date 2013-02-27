@@ -1,8 +1,5 @@
 gem 'minitest'
-require 'mongoid'
-require 'minitest/spec'
 require 'minitest/matchers'
-
 require 'matchers/matcher'
 require 'matchers/document/document'
 require 'matchers/document/have_field'
