@@ -1,9 +1,7 @@
-require_relative 'helpers'
-
 module Mongoid
   module Matchers
     class Matcher
-      include Helpers
+      include MiniTest::Matchers::ActiveModel::Helpers
 
       def failure_message
         "Expected #{inspect} to #{description}".squeeze ' '
