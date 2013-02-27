@@ -14,6 +14,8 @@ This gem supports:
 * Mongoid ~>3.0, Mongoid 4.0 edge (Use mongoid/mongoid Github repository).
 * MiniTest ~>4.1.
 
+**NOTE:** Version 2.0.x will remove support for Mongoid 3.x.
+
 Installation
 ------------
 
@@ -90,8 +92,8 @@ Matchers
       subject { Person }
 
       it { must be_document }    # if model includes Mongoid::Document
-      it { must be_paranoid }    # if model includes Mongoid::Paranoia
-      it { must be_versioned }   # if model includes Mongoid::Versioning
+      it { must be_paranoid }    # if model includes Mongoid::Paranoia   (Only in Mongoid <= 4.0.0)
+      it { must be_versioned }   # if model includes Mongoid::Versioning (Only in Mongoid <= 4.0.0)
       it { must be_timestamped } # if model includes Mongoid::Timestamps
 
       it { must be_stored_in(:people) } # checks the collection for model's document
