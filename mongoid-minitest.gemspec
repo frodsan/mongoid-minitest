@@ -1,9 +1,8 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path '../lib/mongoid-minitest/version', __FILE__
 
 Gem::Specification.new do |gem|
   gem.name          = 'mongoid-minitest'
-  gem.version       = Mongoid::MiniTest::VERSION
+  gem.version       = '1.0.0'
 
   gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel', 'Godfrey Chan']
   gem.email         = ['lrodriguezsanc@gmail.com']
