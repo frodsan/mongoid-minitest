@@ -1,5 +1,6 @@
 ## 1.0.0 - unreleased
 
++ Add support for Ruby 2.0.0, ruby-head and rbx-19mode - *Francesco Rodriguez*.
 + Add support for Mongoid 4 edge - *Francesco Rodriguez*.
 + Remove instance variable warnings.
   Pull Request [#17](https://github.com/frodsan/mongoid-minitest/pull/17) - *Ryan McGeary*.
