@@ -34,6 +34,14 @@ Or install it yourself as:
 Usage
 -----
 
+Require `mongoid-minitest` in your `test_helper.rb` or
+`spec_helper.rb` file:
+
+    gem 'minitest'
+    require 'minitest/autorun'
+    require 'mongoid'
+    require 'mongoid-minitest'
+
 Matchers are available at `Mongoid::Matchers` module.
 Setup matchers according to your testing preference:
 
