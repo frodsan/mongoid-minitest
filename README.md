@@ -5,6 +5,7 @@ MiniTest matchers for Mongoid.
 
 [![Build Status](https://secure.travis-ci.org/frodsan/mongoid-minitest.png?branch=master&.png)](http://travis-ci.org/frodsan/mongoid-minitest)
 [![Dependency Status](https://gemnasium.com/frodsan/mongoid-minitest.png)](https://gemnasium.com/frodsan/mongoid-minitest)
+[![Code Climate](https://codeclimate.com/github/frodsan/mongoid-minitest.png)](https://codeclimate.com/github/frodsan/mongoid-minitest)
 
 Support
 -------
