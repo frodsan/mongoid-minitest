@@ -41,6 +41,14 @@ module Mongoid
           class_of(subject).included_modules.include? mod
         end
 
+        def failure_message
+          "Expected #{inspect} to #{description}"
+        end
+
+        def negative_failure_message
+          "Expected not to #{description}"
+        end
+
         def description
           msg = case
                 when mod == DOCUMENT   then ''

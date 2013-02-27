@@ -17,6 +17,14 @@ module Mongoid
         class_of(subject).collection_name.to_s == collection_name
       end
 
+      def failure_message
+        "Expected #{inspect} to #{description}"
+      end
+
+      def negative_failure_message
+        "Expected not to #{description}"
+      end
+
       def description
         "be stored in #{collection_name.inspect}"
       end

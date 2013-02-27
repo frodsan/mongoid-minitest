@@ -16,7 +16,7 @@ module Mongoid
 
       def matches? subject
         @klass = class_of subject
-        klass.index_options.any? { |idx, _| idx.keys == @attrs }
+        klass.index_options.any? { |idx, _| idx.keys == attrs }
       end
 
       def failure_message

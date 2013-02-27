@@ -14,6 +14,7 @@ module Mongoid
 
         def initialize *fields
           @fields = fields.collect(&:to_s)
+          @errors = []
         end
 
         def of_type type
@@ -27,8 +28,7 @@ module Mongoid
         end
 
         def matches? subject
-          @klass  = class_of subject
-          @errors = []
+          @klass = class_of subject
 
           fields.each do |field|
             if klass.fields.include? field
