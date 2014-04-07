@@ -3,9 +3,10 @@ mongoid-minitest
 
 MiniTest matchers for Mongoid.
 
-[![Build Status](https://secure.travis-ci.org/frodsan/mongoid-minitest.png?branch=master&.png)](http://travis-ci.org/frodsan/mongoid-minitest)
-[![Dependency Status](https://gemnasium.com/frodsan/mongoid-minitest.png)](https://gemnasium.com/frodsan/mongoid-minitest)
-[![Code Climate](https://codeclimate.com/github/frodsan/mongoid-minitest.png)](https://codeclimate.com/github/frodsan/mongoid-minitest)
+[![Gem Version](http://img.shields.io/gem/v/mongoid-minitest.svg)](https://rubygems.org/gems/mongoid-minitest)
+[![Build Status](https://travis-ci.org/frodsan/mongoid-minitest.svg?branch=master)](http://travis-ci.org/frodsan/mongoid-minitest)
+[![Dependency Status](http://img.shields.io/gemnasium/frodsan/mongoid-minitest.svg)](https://gemnasium.com/frodsan/mongoid-minitest)
+[![Code Climate](http://img.shields.io/codeclimate/github/frodsan/mongoid-minitest.svg)](https://codeclimate.com/github/frodsan/mongoid-minitest)
 
 Support
 -------
