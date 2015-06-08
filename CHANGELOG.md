@@ -1,3 +1,10 @@
+## 1.1.0
+
++ Upgrade to minitest 5
+  Pull Request [#20](https://github.com/frodsan/mongoid-minitest/pull/16) - *Ryan McGeary*.
+
++ Add support for Ruby 2.1 and 2.2 - *Ryan McGeary*.
+
 ## 1.0.0 - February 27, 2013
 
 + Extract Validation Matchers to [minitest-activemodel](https://github.com/frodsan/minitest-activemodel) gem.
