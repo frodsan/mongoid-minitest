@@ -16,7 +16,7 @@ module Mongoid
 
       def matches? subject
         @klass = class_of subject
-        klass.index_options.any? { |idx, _| idx.keys == attrs }
+        index_options.any? { |idx, _| idx.keys == attrs }
       end
 
       def failure_message
@@ -33,8 +33,16 @@ module Mongoid
 
       private
 
+      def index_options
+        if Mongoid::VERSION.to_i < 4
+          klass.index_options
+        else
+          Hash[klass.index_specifications.map{ |i| [i.key, i.options] }]
+        end
+      end
+
       def indexes
-        klass.index_options.keys.map(&:keys)
+        index_options.keys.map(&:keys)
       end
     end
   end
