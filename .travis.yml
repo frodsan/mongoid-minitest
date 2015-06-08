@@ -5,10 +5,12 @@ rvm:
   - rbx-19mode
   - jruby-19mode
 gemfile:
+  - gemfiles/mongoid-3.1.gemfile
+  - gemfiles/mongoid-4.0.gemfile
+  - gemfiles/edge.gemfile
   - Gemfile
-  - Gemfile.edge
 
 matrix:
   allow_failures:
-    - gemfile: Gemfile.edge
+    - gemfile: gemfiles/edge.gemfile
   fast_finish: true

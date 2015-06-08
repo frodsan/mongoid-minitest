@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gemspec
-
+gemspec path: "../"
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'minitest-activemodel', github: 'frodsan/minitest-activemodel'
