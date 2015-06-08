@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = 'mongoid-minitest'
-  gem.version       = '1.0.0'
+  gem.version       = '1.1.0'
 
   gem.authors       = ['Francesco Rodriguez', 'Sascha Wessel', 'Godfrey Chan', 'Ryan McGeary']
   gem.email         = ['lrodriguezsanc@gmail.com', 'godfreykfc@gmail.com', 'ryan@mcgeary.org']
