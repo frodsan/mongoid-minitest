@@ -6,7 +6,7 @@ describe 'Document' do
 
     it { must be_document }
     it { must be_timestamped }
-    unless Mongoid::VERSION == '4.0.0'
+    unless Mongoid::VERSION.to_i >= 4
       it { must be_paranoid }
       it { must be_versioned }
     end

@@ -2,8 +2,8 @@ module Mongoid
   module Matchers
     module Document
       DOCUMENT   = Mongoid::Document
-      PARANOIA   = Mongoid::Paranoia   unless Mongoid::VERSION == '4.0.0'
-      VERSIONING = Mongoid::Versioning unless Mongoid::VERSION == '4.0.0'
+      PARANOIA   = Mongoid::Paranoia   unless Mongoid::VERSION.to_i >= 4
+      VERSIONING = Mongoid::Versioning unless Mongoid::VERSION.to_i >= 4
       TIMESTAMPS = Mongoid::Timestamps
 
       # TODO: add documentation.
@@ -11,7 +11,7 @@ module Mongoid
         DocumentMatcher.new DOCUMENT
       end
 
-      unless Mongoid::VERSION == '4.0.0'
+      unless Mongoid::VERSION.to_i >= 4
         # TODO: add documentation.
         def be_paranoid
           DocumentMatcher.new PARANOIA

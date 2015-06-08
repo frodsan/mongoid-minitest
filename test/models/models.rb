@@ -1,7 +1,7 @@
 class Person
   include Mongoid::Document
   include Mongoid::Timestamps
-  unless Mongoid::VERSION == '4.0.0'
+  unless Mongoid::VERSION.to_i >= 4
     include Mongoid::Paranoia
     include Mongoid::Versioning
   end
