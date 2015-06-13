@@ -24,7 +24,22 @@ Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'mongoid-minitest', group: :test
+```ruby
+gem 'mongoid-minitest', group: :test
+```
+
+Depend on either
+[`minitest-matchers`](https://github.com/wojtekmach/minitest-matchers) or
+[`minitest-matchers_vaccine`](https://github.com/rmm5t/minitest-matchers_vaccine)
+by adding one to your application's Gemfile.
+
+```ruby
+gem 'mongoid-minitest', group: :test
+
+# - OR - #
+
+gem 'mongoid-minitest_vaccine', group: :test
+```
 
 And then execute:
 
@@ -40,117 +55,131 @@ Usage
 Require `mongoid-minitest` in your `test_helper.rb` or
 `spec_helper.rb` file:
 
-    require 'minitest/autorun'
-    require 'mongoid'
-    require 'mongoid-minitest'
+```ruby
+require 'minitest/autorun'
+require 'mongoid'
+require 'mongoid-minitest'
+```
 
 Matchers are available at `Mongoid::Matchers` module.
 Setup matchers according to your testing preference:
 
 ### minitest/unit
 
-    class MiniTest::Unit::TestCase
-      include Mongoid::Matchers
-    end
+```ruby
+class MiniTest::Unit::TestCase
+  include Mongoid::Matchers
+end
+```
 
 ### minitest/spec
 
-    class MiniTest::Spec
-      include Mongoid::Matchers
-    end
+```ruby
+class MiniTest::Spec
+  include Mongoid::Matchers
+end
+```
 
 See the following examples:
 
-    # minitest/unit
-    class DummyTest < MiniTest::Unit::TestCase
-      def test_matchers
-        assert_must Dummy, have_field(:name)
-        assert_wont Dummy, have_field(:none)
-      end
-    end
+```ruby
+# minitest/unit
+class DummyTest < MiniTest::Unit::TestCase
+  def test_matchers
+    assert_must Dummy, have_field(:name)
+    assert_wont Dummy, have_field(:none)
+  end
+end
 
-    # minitest/spec
-    describe Dummy
-      it "should test matchers" do
-        Dummy.must have_field(:name)
-        Dummy.wont have_field(:none)
-      end
-    end
+# minitest/spec
+describe Dummy
+  it "should test matchers" do
+    Dummy.must have_field(:name)
+    Dummy.wont have_field(:none)
+  end
+end
 
-    # minitest/spec with subject
-    describe Dummy
-      it { must have_field(:name) }
-      it { wont have_field(:none) }
-    end
+# minitest/spec with subject
+describe Dummy
+  it { must have_field(:name) }
+  it { wont have_field(:none) }
+end
+```
 
 Matchers
 --------
 
 `Mongoid::Matchers` include the following modules:
 
-    Module Mongoid
-      Module Matchers
-        include Document
-        include Associations
-        include MiniTest::Matchers::ActiveModel
-      end
-    end
+```ruby
+Module Mongoid
+  Module Matchers
+    include Document
+    include Associations
+    include MiniTest::Matchers::ActiveModel
+  end
+end
+```
 
 **NOTE:** [minitest-activemodel](https://github.com/frodsan/minitest-activemodel)
 gem is a dependency of this gem.
 
 ### Document Matchers
 
-    describe Mongoid::Matchers::Document do
-      subject { Person }
+```ruby
+describe Mongoid::Matchers::Document do
+  subject { Person }
 
-      it { must be_document }    # if model includes Mongoid::Document
-      it { must be_paranoid }    # if model includes Mongoid::Paranoia   (Only in Mongoid <= 4.0.0)
-      it { must be_versioned }   # if model includes Mongoid::Versioning (Only in Mongoid <= 4.0.0)
-      it { must be_timestamped } # if model includes Mongoid::Timestamps
+  it { must be_document }    # if model includes Mongoid::Document
+  it { must be_paranoid }    # if model includes Mongoid::Paranoia   (Only in Mongoid <= 4.0.0)
+  it { must be_versioned }   # if model includes Mongoid::Versioning (Only in Mongoid <= 4.0.0)
+  it { must be_timestamped } # if model includes Mongoid::Timestamps
 
-      it { must be_stored_in(:people) } # checks the collection for model's document
+  it { must be_stored_in(:people) } # checks the collection for model's document
 
-      it { must have_field(:name) }
-      it { must have_field(:name).of_type(String) }
-      it { must have_field(:name).with_default_value("me") }
-      it { must have_field(:name).of_type(String).with_default_value("me") }
+  it { must have_field(:name) }
+  it { must have_field(:name).of_type(String) }
+  it { must have_field(:name).with_default_value("me") }
+  it { must have_field(:name).of_type(String).with_default_value("me") }
 
-      it { must have_fields(:name, :login) }
-      it { must have_fields(:name, :login).of_type(String) }
-      it { must have_fields(:name, :login).with_default_value("me") }
-      it { must have_fields(:name, :login).of_type(String).with_default_value("me") }
+  it { must have_fields(:name, :login) }
+  it { must have_fields(:name, :login).of_type(String) }
+  it { must have_fields(:name, :login).with_default_value("me") }
+  it { must have_fields(:name, :login).of_type(String).with_default_value("me") }
 
-      it { must have_index_for(:name) }
-      it { must have_index_for(:account_id, :email) }
-    end
+  it { must have_index_for(:name) }
+  it { must have_index_for(:account_id, :email) }
+end
+```
 
 ### Association Matchers
 
-    describe Mongoid::Matchers::Associations do
-      describe Person do
-        subject { Person }
+```ruby
+describe Mongoid::Matchers::Associations do
+  describe Person do
+    subject { Person }
 
-        it { must have_one(:account) }
-        it { must have_many(:pets).of_type(Pet) }
-        it { must have_and_belong_to_many(:friends) }
+    it { must have_one(:account) }
+    it { must have_many(:pets).of_type(Pet) }
+    it { must have_and_belong_to_many(:friends) }
 
-        it { must embed_one(:profile) }
-        it { must embed_many(:sites) }
-      end
+    it { must embed_one(:profile) }
+    it { must embed_many(:sites) }
+  end
 
-      describe Pet do
-        subject { Pet }
+  describe Pet do
+    subject { Pet }
 
-        it { must belong_to(:person) }
-      end
+    it { must belong_to(:person) }
+  end
 
-      describe Site do
-        subject { Site }
+  describe Site do
+    subject { Site }
 
-        it { must embedded_in(:person) }
-      end
-    end
+    it { must embedded_in(:person) }
+  end
+end
+```
 
 ### Validation Matchers
 
@@ -182,5 +211,5 @@ Maintainers
 License
 -------
 
-MIT License. Copyright 2012 Francesco Rodriguez. See [LICENSE](https://github.com/frodsan/lego/blob/master/LICENSE)
+MIT License. Copyright 2012 Francesco Rodriguez. See [LICENSE](LICENSE.md)
 for more information.
