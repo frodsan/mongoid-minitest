@@ -34,11 +34,11 @@ Depend on either
 by adding one to your application's Gemfile.
 
 ```ruby
-gem 'mongoid-minitest', group: :test
+gem 'minitest-matchers', group: :test
 
 # - OR - #
 
-gem 'mongoid-minitest_vaccine', group: :test
+gem 'minitest-matchers_vaccine', group: :test
 ```
 
 And then execute:
