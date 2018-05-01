@@ -2,11 +2,16 @@ language: ruby
 rvm:
   - 2.1
   - 2.2
+  - 2.3
+  - 2.5
   - rbx-19mode
   - jruby-19mode
 gemfile:
   - gemfiles/mongoid-3.1.gemfile
   - gemfiles/mongoid-4.0.gemfile
+  - gemfiles/mongoid-5.1.gemfile
+  - gemfiles/mongoid-6.0.gemfile
+  - gemfiles/mongoid-7.0.gemfile
   - gemfiles/edge.gemfile
   - Gemfile
 
