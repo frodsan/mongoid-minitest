@@ -19,7 +19,7 @@ module Mongoid
         EMBEDDED_IN = Mongoid::Relations::Embedded::In
       end
 
-      class HaveRelationMatcher < Matcher
+      class HaveAssociationMatcher < Matcher
         def initialize name, type
           @association = {}
           @association[:name] = name.to_s
@@ -136,31 +136,31 @@ module Mongoid
       end
 
       def have_one association_name
-        HaveRelationMatcher.new association_name, HAS_ONE
+        HaveAssociationMatcher.new association_name, HAS_ONE
       end
 
       def have_many association_name
-        HaveRelationMatcher.new association_name, HAS_MANY
+        HaveAssociationMatcher.new association_name, HAS_MANY
       end
 
       def have_and_belong_to_many association_name
-        HaveRelationMatcher.new association_name, HAS_AND_BELONGS_TO_MANY
+        HaveAssociationMatcher.new association_name, HAS_AND_BELONGS_TO_MANY
       end
 
       def belong_to association_name
-        HaveRelationMatcher.new association_name, BELONGS_TO
+        HaveAssociationMatcher.new association_name, BELONGS_TO
       end
 
       def embed_one association_name
-        HaveRelationMatcher.new association_name, EMBEDS_ONE
+        HaveAssociationMatcher.new association_name, EMBEDS_ONE
       end
 
       def embed_many association_name
-        HaveRelationMatcher.new association_name, EMBEDS_MANY
+        HaveAssociationMatcher.new association_name, EMBEDS_MANY
       end
 
       def embedded_in association_name
-        HaveRelationMatcher.new association_name, EMBEDDED_IN
+        HaveAssociationMatcher.new association_name, EMBEDDED_IN
       end
     end
   end
