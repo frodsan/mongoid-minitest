@@ -21,8 +21,9 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = '>= 1.9.3'
 
   gem.add_dependency 'minitest', '~> 5.0'
-  gem.add_dependency 'mongoid' , '>= 3'
+  gem.add_dependency 'mongoid' ,'>= 3', '< 8.0'
   gem.add_dependency 'minitest-activemodel', '~> 1.1'
+  gem.add_dependency 'mongoid-compatibility'
 
   gem.add_development_dependency 'minitest-matchers'
   gem.add_development_dependency 'rake'

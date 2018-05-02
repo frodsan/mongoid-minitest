@@ -1,3 +1,5 @@
+require 'mongoid-compatibility'
+
 require 'minitest-activemodel'
 require 'matchers/matcher'
 require 'matchers/document/document'

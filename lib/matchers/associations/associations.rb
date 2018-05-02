@@ -1,13 +1,23 @@
 module Mongoid
   module Matchers
     module Associations
-      HAS_ONE = Mongoid::Relations::Referenced::One
-      HAS_MANY = Mongoid::Relations::Referenced::Many
-      HAS_AND_BELONGS_TO_MANY = Mongoid::Relations::Referenced::ManyToMany
-      BELONGS_TO = Mongoid::Relations::Referenced::In
-      EMBEDS_ONE = Mongoid::Relations::Embedded::One
-      EMBEDS_MANY = Mongoid::Relations::Embedded::Many
-      EMBEDDED_IN = Mongoid::Relations::Embedded::In
+      if Mongoid::Compatibility::Version.mongoid7_or_newer?
+        HAS_ONE = Mongoid::Association::Referenced::HasOne
+        HAS_MANY = Mongoid::Association::Referenced::HasMany
+        HAS_AND_BELONGS_TO_MANY = Mongoid::Association::Referenced::HasAndBelongsToMany
+        BELONGS_TO = Mongoid::Association::Referenced::BelongsTo
+        EMBEDS_ONE = Mongoid::Association::Embedded::EmbedsOne
+        EMBEDS_MANY = Mongoid::Association::Embedded::EmbedsMany
+        EMBEDDED_IN = Mongoid::Association::Embedded::EmbeddedIn
+      else
+        HAS_ONE = Mongoid::Relations::Referenced::One
+        HAS_MANY = Mongoid::Relations::Referenced::Many
+        HAS_AND_BELONGS_TO_MANY = Mongoid::Relations::Referenced::ManyToMany
+        BELONGS_TO = Mongoid::Relations::Referenced::In
+        EMBEDS_ONE = Mongoid::Relations::Embedded::One
+        EMBEDS_MANY = Mongoid::Relations::Embedded::Many
+        EMBEDDED_IN = Mongoid::Relations::Embedded::In
+      end
 
       class HaveAssociationMatcher < Matcher
         def initialize name, type
@@ -62,7 +72,13 @@ module Mongoid
         end
 
         def check_association_type
-          if !@metadata.nil? && @metadata.relation != @association[:type]
+          is_failure = if Mongoid::Compatibility::Version.mongoid7_or_newer?
+            !@metadata.nil? && @metadata.class != @association[:type]
+          else
+            !@metadata.nil? && @metadata.relation != @association[:type]
+          end
+
+          if is_failure
             @negative_message = association_type_failure_message
             @result = false
           else
