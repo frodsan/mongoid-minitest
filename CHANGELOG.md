@@ -1,3 +1,8 @@
+## 1.2.0
+
++ Add support for Mongoid 7
+  Pull Request [#24](https://github.com/frodsan/mongoid-minitest/pull/24) - *Tomáš Celizna*.
+
 ## 1.1.0
 
 + Upgrade to minitest 5
